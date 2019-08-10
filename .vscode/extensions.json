@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"akamud.vscode-theme-onedark",
+		"vscode-icons-team.vscode-icons",
+		"james-yu.latex-workshop",
+		"davidanson.vscode-markdownlint",
+	],
+	"unwantedRecommendations": [
+		
+	]
+}
