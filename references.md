@@ -1,0 +1,16 @@
+# References
+
+## Papers
+
+* [Detecting walkable plane areas by using RGB-D camera and accelerometer for visually impaired people by Kenta Imai, Itaru Kitahara, Yoshinari Kameda](https://ieeexplore.ieee.org/document/8280422)
+* [A new method for text detection and recognition in indoor scene for assisting blind people by Hanen Jabnoun, Faouzi Benzarti, Hamid Amiri](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10341/1034123/A-new-method-for-text-detection-and-recognition-in-indoor/10.1117/12.2268399.short?SSO=1)
+* [Real-Time Indoor Scene Description for the Visually Impaired Using Autoencoder Fusion Strategies with Visible Cameras Salim Malek, Farid Melgani, Mohamed Lamine Mekhalfi, and Yakoub Bazi](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5712811/)
+* [Fast indoor scene description for blind people with multiresolution random projections by Mohamed L. Mekhalfia Farid Melgania, Yakoub Bazib, Naif Alajlanb](https://www.sciencedirect.com/science/article/pii/S1047320317300317)
+* [A Novel Approach to Object Detection and Distance Measurement for Visually Impaired People Manoj BG and Dr. Rohini V](https://pdfs.semanticscholar.org/15fb/a9350315ff1167881a3b3be974e0576f1c10.pdf)
+* [Achieving Practical and Accurate Indoor Navigation for People with Visual Impairments by Ahmetovic and Murata et.al](https://dl.acm.org/citation.cfm?id=3058560)
+
+## Related blogs
+
+* [Microsoft Seeing AI](https://www.microsoft.com/en-us/ai/seeing-ai)
+* [nvidia's blog on Seeing AI](https://blogs.nvidia.com/blog/2018/04/26/deep-learning-app-seeing-ai-app/)
+* [Computer vision for the visually impaired: I have a dream by Karim Ouda](https://medium.com/@karim_ouda/computer-vision-for-the-visually-impaired-i-have-a-dream-7eaee112aeb9)
