@@ -1,5 +1,11 @@
 # References
 
+## Recent Papers
+
+* [Deep Learning based Wearable Assistive System for Visually Impaired People by Yimin Lin, Kai Wang, Wanxin Yi, Shiguo Lian](https://arxiv.org/pdf/1908.03364v1.pdf)
+* [Wearable Travel Aid for Environment Perceptionand Navigation of Visually Impaired People by Jinqiang Bai, Zhaoxiang Liu, Yimin Lin, Ye Li, Shiguo Lian, Dijun Liu](https://arxiv.org/pdf/1904.13037v1.pdf)
+* [Drishtikon: An advanced navigational aid system for visually impaired people by Shashank Kotyan, Pankaj Kumar Sahu, Nishant Kumar, Venkanna U](https://arxiv.org/ftp/arxiv/papers/1904/1904.10351.pdf)
+
 ## Papers
 
 * [Detecting walkable plane areas by using RGB-D camera and accelerometer for visually impaired people by Kenta Imai, Itaru Kitahara, Yoshinari Kameda](https://ieeexplore.ieee.org/document/8280422)
