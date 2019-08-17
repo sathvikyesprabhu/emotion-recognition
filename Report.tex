@@ -81,7 +81,16 @@
 
   \section{Motivation}
 
+Emotions have a major influence on human health. Many disorders are found to be directly correlated with different emotional states.  Many current methods use facial expressions to recognize the emotional states but they are not reliable as they can be deliberately falsified. Emotion recognition systems based on physiological signals are more powerful as they are associated with the autonomic nervous system (ANS) and hence cannot be hidden or falsified\textsuperscript{[citation needed]}. These systems can be used to monitor old aged people and those with intellectual disabilities. Children with autism spectrum disorder(ASD) often find it difficult to recognize, express and control emotions\textsuperscript{[citation needed]}. It can also be used to enhance road safety by monitoring driver's emotions\textsuperscript{[citation needed]}. The acquisition of the signals also requires less energy and storage capacity and opens pathways for future low cost solutions. The proposed system can also be used in human-computer interaction for machines to better understand humans\textsuperscript{[citation needed]}. Using the same system, various biosignals can also be bonded together to produce identification clues which can be used in domains like defence and banking\textsuperscript{[citation needed]}.\\
+
+We are using the recent MAHNOB-HCI dataset\textsuperscript{[citation needed]} for training our model. It has the reponses and physiological data of 30 participants after inducing their emotional states by showing them movies. Physiological signals like ECG, EEG, GSR, SKT and respiration amplitude were recorded. Studies find this dataset performing better than other common datasets and they attribute this to stronger emotions being induced in this dataset.\textsuperscript{[citation needed]}\\
+We aim to have wearable sensors for our method.
   \section{Survey of State of the Art}
+
+There are different models followed for emotion recognition. The Eckman's model is based on six discrete basic emotions: Happiness, Sadness, Surprise, Fear, Anger and Disgust\textsuperscript{[citation needed]}. The Plutchik's model uses eight fundamental emotions: Joy, Trust, Fear, Surprise, Sadness, Disgust, Anger and Anticipation\textsuperscript{[citation needed]}. The third model\textsuperscript{[citation needed]} focuses on two dimensional evaluation, like the valence-arousal model\textsuperscript{[citation needed]}.\\
+
+Many researchers have only analysed the performance of their algorithms on datasets and have not done a real life implementation of them.Cheng et al.\textsuperscript{[citation needed]} have implemented a real time ecg based detection of negative emotions using the Bio Vid Emo DB dataset and they have obtained an accuracy of 79.46\% . Mishra et al.\textsuperscript{[citation needed]} have used speech signals.....
+Now we cite the work done using the MAHNOB-HCI dataset. Wiem et al.\textsuperscript{[citation needed]} have obtained accuracies of 67.5\% for arousal and 68.75\% for valence using have used ECG, SKT, GSR and RESP . They have implemented the classification stage using the SVM RBF kernel on a Raspberry Pi III Model B. 
     
   \section{Features we wish to implement}
 
