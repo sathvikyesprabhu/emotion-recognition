@@ -35,7 +35,7 @@
 
 \usepackage[superscript,biblabel]{cite}
 \usepackage{hyperref}
-\hypersetup{colorlinks,linkcolor={blue},citecolor={blue},urlcolor={red}} 
+\hypersetup{colorlinks,linkcolor={blue},citecolor={blue},urlcolor={orange}} 
 
 \title{\textbf{Emotion recognition using physiological signals}}
 \author{
@@ -103,9 +103,16 @@
     \end{itemize}
 
   \section{Implementation Details}
-    We are using the recent MAHNOB-HCI dataset\cite{soleymani_multimodal_2012} for training our model. 
+    We are using the recent MAHNOB-HCI dataset\cite{soleymani_multimodal_2012} for training our model.
     It contains the reponses and physiological data (ECG. GSR, SKT) of 30 participants after inducing their emotional states by showing them movies. 
     Studies find this dataset performs better than other common datasets and they attribute this to stronger emotions being induced in this dataset.\textsuperscript{[citation needed]}
+
+    The model is built using \href{https://github.com/pytorch/pytorch}{PyTorch} and \href{https://github.com/pytorch/ignite}{ignite}.
+    PyTorch is a deep learning framework by facebook and ignite is a framework that provides useful abstractions for PyTorch.
+    
+    The mobile app is built using \href{https://facebook.github.io/react-native/}{React Native} and \href{https://expo.io/}{Expo}, so that the app can have the same codebase for both iOS and Android.
+    Waveform data from the sensors is sent to \href{https://aws.amazon.com/iot/}{AWS IoT} on the cloud to be processed by the model.
+
     We aim to have wearable sensors for our method.\textsuperscript{[need more info]}
 
   \section{Project Timeline}
