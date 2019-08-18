@@ -91,12 +91,12 @@
     There are different models followed for emotion recognition. The Eckman's model is based on six discrete basic emotions: Happiness, Sadness, Surprise, Fear, Anger and Disgust\textsuperscript{[citation needed]}. The Plutchik's model uses eight fundamental emotions: Joy, Trust, Fear, Surprise, Sadness, Disgust, Anger and Anticipation\textsuperscript{[citation needed]}. The third model\textsuperscript{[citation needed]} focuses on two dimensional evaluation, like the valence-arousal model\textsuperscript{[citation needed]}.
 
     Many researchers have only analysed the performance of their algorithms on datasets and have not done a real life implementation of them.
-    Cheng et al.\textsuperscript{[citation needed]} have implemented a real time ecg based detection of negative emotions using the Bio Vid Emo DB dataset and they have obtained an accuracy of 79.46\% . 
-    Mishra et al.\textsuperscript{[citation needed]} have used speech signals to detect emotions - Happy, Sad, Anger, Neutral and they reported an accuracy of 95\% using a Raspberry Pi III.
-    Guo et al.\textsuperscript{[citation needed]}have used PCA and SVM to classify emotions into negative and positive states using Heart Rate Variability(HRV) features with an accuracy of 71.4\%.
-    Now we cite the work done using the MAHNOB-HCI dataset. 
-    Ben and Lachiri\textsuperscript{[citation needed]} have obtained accuracies of 67.5\% for arousal and 68.75\% for valence using have used ECG, SKT, GSR and RESP . They have implemented the classification stage using the SVM RBF kernel on a Raspberry Pi III Model B.
-    Ferdinando et al.\textsuperscript{[citation needed]} compared ECG and HRV features and reported that dominant frequencies based on
+    Cheng et al.\cite{cheng_novel_2017} have implemented a real time ecg based detection of negative emotions using the Bio Vid Emo DB dataset and they have obtained an accuracy of 79.46\% . 
+    Mishra et al.\cite{mishra_speech} have used speech signals to detect emotions - Happy, Sad, Anger, Neutral and they reported an accuracy of 95\% using a Raspberry Pi III.
+    Guo et al.\cite{guo_heart_2016}have used PCA and SVM to classify emotions into negative and positive states using Heart Rate Variability(HRV) features with an accuracy of 71.4\%.
+    Now we cite the work done using the MAHNOB-HCI dataset\cite{mahnob_hci}. 
+    Ben and Lachiri\cite{ben_rpi} have obtained accuracies of 67.5\% for arousal and 68.75\% for valence using have used ECG, SKT, GSR and RESP . They have implemented the classification stage using the SVM RBF kernel on a Raspberry Pi III Model B.
+    Ferdinando et al.\cite{ferdinando_comparing_2016} compared ECG and HRV features and reported that dominant frequencies based on
     bivariate empirical mode decomposition (BEMD) analysis gave better accuracies than standard HRV analysis.
    
   \section{Features we wish to implement}
@@ -109,7 +109,7 @@
     \end{itemize}
 
   \section{Implementation Details}
-    We are using the recent MAHNOB-HCI dataset\textsuperscript{[citation needed]} for training our model. It has the reponses and physiological data (ECG. GSR, SKT) of 30 participants after inducing their emotional states by showing them movies. Studies find this dataset performing better than other common datasets and they attribute this to stronger emotions being induced in this dataset.\textsuperscript{[citation needed]}\\
+    We are using the recent MAHNOB-HCI dataset\cite{mahnob_hci} for training our model. It has the reponses and physiological data (ECG. GSR, SKT) of 30 participants after inducing their emotional states by showing them movies. Studies find this dataset performing better than other common datasets and they attribute this to stronger emotions being induced in this dataset.\textsuperscript{[citation needed]}\\
     We aim to have wearable sensors for our method.
 
   \section{Project Timeline}
