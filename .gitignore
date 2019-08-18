@@ -271,3 +271,6 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+
+# Generated from .bib files
+__latexindent_temp.tex
