@@ -37,6 +37,10 @@
 \usepackage{hyperref}
 \hypersetup{colorlinks,linkcolor={blue},citecolor={blue},urlcolor={orange}} 
 
+\usepackage{graphicx}
+%Path relative to the main .tex file 
+\graphicspath{ {./images/} }
+
 \title{\textbf{Emotion recognition using physiological signals}}
 \author{
   Russel Shawn Dsouza\\
@@ -51,16 +55,19 @@
   \maketitle
 
   \section{Introduction}
-    Emotions play a critical role inthe evolution of consciousness and the operations of all mental processes. Types of emotion are related to types or levels of consciousness\cite{izard_emotion_2009}.
+    Emotions play a critical role in the evolution of consciousness and the operations of all mental processes. The different types of emotions have been shown to be related to various levels of consciousness\cite{izard_emotion_2009}.
     Positive emotions help improve human health and work efficiency, while negative emotions may cause health problems.
-    Experiences of negative emotion are inevitable and at times useful. Even so, when extreme, prolonged, or contextually inappropriate, negative emotions can trigger a wide array of problems for individuals and for society. 
+    Experiences of negative emotions are inevitable and at times useful. 
+    Even so, when extreme, prolonged, or contextually inappropriate, negative emotions can trigger a wide array of problems for individuals and for society. 
     Fear and anxiety, for instance, fuel phobias and other anxiety disorders \cite{ohman_automatic_1993} and together with acute and chronic stress may compromise immune functioning and create susceptibilities to stress-related physical disorders \cite{oleary_stress_1990}. 
     For some individuals, sadness and grief may swell into unipolar depression \cite{nolen-hoeksema_response_1993}, which when severe can lead to immunosuppression \cite{oleary_stress_1990}, loss of work productivity \cite{coryell_enduring_1993}, and suicide \cite{chen_lifetime_1996}. 
     Anger and its poor management have been implicated in the etiology of heart disease\cite{barefoot_hostility_1983, fredrickson_hostility_2000, scheier_person_1995} and some cancers\cite{eysenck_cancer_1994, greer_psychological_1975}, as well as in aggression and violence, especially in boys and men\cite{buss_evolution_2016, lemerise_development_2008}.
 
-    In general, emotion recognition methods could be classified into two major categories. 
-    One is using human physical signals such as facial expression, speech, gesture, posture, etc., which has the advantage of easy collection and have been studied for years. 
-    However, their reliability can’t be guaranteed, as it’s relatively easy for people to control physical signals like facial expressions or speech to hide their real emotions especially during social communications.
+    Emotion recognition helps to qualitatively and quantitavely understand emotions, providing tools to aid the cure of a lot of mental diseases and disorders. 
+
+    In general, emotion recognition methods can be classified into two major categories. 
+    The first is using human physical signals such as facial expression, speech, gesture, posture, etc., which has the advantage of easy collection and has been studied for years. 
+    However, their reliability cannot be guaranteed, as it’s relatively easy for people to control physical signals like facial expressions or speech to hide their real emotions especially during social communications.
 
     The other category is using internal signals i.e. the physiological signals, which include the electroencephalogram(EEG), temperature(T), electrocardiogram(ECG), electromyogram(EMG), galvanic skin response(GSR), respiration(RSP).
     Physiological signals are generated in response to the Central Nervous System (CNS) and the Autonomic Nervous System (ANS) of human body, in which emotion changes, according to Cannon’s theory\cite{cannon_james-lange_1927}.
@@ -93,6 +100,7 @@
     Ferdinando et al.\cite{ferdinando_comparing_2016} compared ECG and HRV features and reported that dominant frequencies based on
     bivariate empirical mode decomposition (BEMD) analysis gave better accuracies than standard HRV analysis.
    
+  \newpage
   \section{Features we wish to implement}
     We plan to 
     \begin{itemize}
@@ -103,16 +111,25 @@
     \end{itemize}
 
   \section{Implementation Details}
-We aim to have wearable sensors for our method. The physiological data is acquired from the subject using the ECG, GSR and SKT sensors and sent to a  \href{https://www.raspberrypi.org/}{Raspberry Pi}. We are using the recent \href{https://mahnob-db.eu/hci-tagging/}{ MAHNOB-HCI dataset}\cite{soleymani_multimodal_2012} for training our model. It contains the reponses and physiological data (ECG. GSR, SKT) of 30 participants after inducing their emotional states by showing them movies. 
-    Studies find this dataset to perform better than other common datasets and they attribute this to stronger emotions being induced in this dataset.\cite{simon_selection_2016}
+    We aim to have wearable sensors for our method. The physiological data is acquired from the subject using the ECG, GSR and SKT sensors and sent to a  \href{https://www.raspberrypi.org/}{Raspberry Pi}. We are using the recent \href{https://mahnob-db.eu/hci-tagging/}{ MAHNOB-HCI dataset}\cite{soleymani_multimodal_2012} for training our model. It contains the reponses and physiological data (ECG, GSR, SKT) of 30 participants after inducing their emotional states by showing them stimulating movies. 
+    Studies have found this dataset to perform better than other common datasets and they attribute this to stronger emotions being induced in this dataset\cite{simon_selection_2016}.
 
-The model is built using \href{https://github.com/pytorch/pytorch}{PyTorch} and \href{https://github.com/pytorch/ignite}{ignite}. PyTorch is a deep learning framework by facebook and ignite is a framework that provides useful abstractions for PyTorch. The mobile app is built using \href{https://facebook.github.io/react-native/}{React Native} and \href{https://expo.io/}{Expo}, so that the app can have the same codebase for both iOS and Android. Waveform data from the sensors is sent to \href{https://aws.amazon.com/iot/}{AWS IoT} on the cloud to be processed by the model.
+    The model is built using \href{https://github.com/pytorch/pytorch}{PyTorch} and \href{https://github.com/pytorch/ignite}{ignite}. PyTorch is a deep learning framework by facebook and ignite is a framework that provides useful abstractions for PyTorch. The mobile app is built using \href{https://facebook.github.io/react-native/}{React Native} and \href{https://expo.io/}{Expo}, so that the app can have the same codebase for both iOS and Android. Waveform data from the sensors is sent to \href{https://aws.amazon.com/iot/}{AWS IoT} on the cloud to be processed by the model.
 
-  \section{Project Timeline}
-    PERT Chart\\
-    Week1...Week 2...Week 3...
-  
+    \begin{figure}[h]
+      \centering
+      \includegraphics[scale=0.6]{schematic}
+      \caption{Block diagram of proposed implementation}
+    \end{figure}
+    
   \newpage
+  \section{Project Timeline}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=\textwidth, scale=1.5]{pert_chart}
+      \caption{PERT Chart}
+    \end{figure}
+  
   \bibliography{bibliography}
   \bibliographystyle{ieeetr}
 
