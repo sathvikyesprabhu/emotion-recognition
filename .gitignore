@@ -274,3 +274,6 @@ TSWLatexianTemp*
 
 # Generated from .bib files
 __latexindent_temp.tex
+
+# local files
+extra.md
