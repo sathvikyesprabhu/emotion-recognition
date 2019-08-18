@@ -51,45 +51,33 @@
   \maketitle
 
   \section{Introduction}
-    Emotions play a critical role inthe evolution of consciousness and the operations of all mental processes. Types of emotion are related to types or levels of consciousness.\cite{izard_emotion_2009}
+    Emotions play a critical role inthe evolution of consciousness and the operations of all mental processes. Types of emotion are related to types or levels of consciousness\cite{izard_emotion_2009}.
     Positive emotions help improve human health and work efficiency, while negative emotions may cause health problems.
     Experiences of negative emotion are inevitable and at times useful. Even so, when extreme, prolonged, or contextually inappropriate, negative emotions can trigger a wide array of problems for individuals and for society. 
     Fear and anxiety, for instance, fuel phobias and other anxiety disorders \cite{ohman_automatic_1993} and together with acute and chronic stress may compromise immune functioning and create susceptibilities to stress-related physical disorders \cite{oleary_stress_1990}. 
     For some individuals, sadness and grief may swell into unipolar depression \cite{nolen-hoeksema_response_1993}, which when severe can lead to immunosuppression \cite{oleary_stress_1990}, loss of work productivity \cite{coryell_enduring_1993}, and suicide \cite{chen_lifetime_1996}. 
     Anger and its poor management have been implicated in the etiology of heart disease\cite{barefoot_hostility_1983, fredrickson_hostility_2000, scheier_person_1995} and some cancers\cite{eysenck_cancer_1994, greer_psychological_1975}, as well as in aggression and violence, especially in boys and men\cite{buss_evolution_2016, lemerise_development_2008}.
 
-    Emotion recognition has been applied in many areas such as safe driving \textsuperscript{[citation needed]}, health care\textsuperscript{[citation needed]} especially mental health monitoring \textsuperscript{[citation needed]}, social security \textsuperscript{[citation needed]}, and so on. 
+    Emotion recognition has been applied in many areas such as safe driving\cite{de_nadai_enhancing_2016}, health care\cite{guo_pervasive_2013} especially mental health monitoring\cite{verschuere_psychopathy_2006}, social security\cite{noauthor_facial_nodate}, and so on. 
+
     In general, emotion recognition methods could be classified into two major categories. 
-    One is using human physical signals such as facial expression \textsuperscript{[citation needed]}, speech \textsuperscript{[citation needed]}, gesture\textsuperscript{[citation needed]}, posture\textsuperscript{[citation needed]}, etc., which has the advantage of easy collection and have been studied for years. 
-    However, the reliability can’t be guaranteed, as it’s relatively easy for people to control the physical signals like facial expression or speech to hide their real emotions especially during social communications.\textsuperscript{[citation needed]}
+    One is using human physical signals such as facial expression, speech, gesture, posture, etc., which has the advantage of easy collection and have been studied for years. 
+    However, the reliability can’t be guaranteed, as it’s relatively easy for people to control the physical signals like facial expression or speech to hide their real emotions especially during social communications.
+    The other category is using the internal signals—the physiological signals, which include the electroencephalogram(EEG), temperature(T), electrocardiogram(ECG), electromyogram(EMG), galvanic skin response(GSR), respiration(RSP), etc. 
 
-    The other category is using the internal signals—the physiological signals, which include the electroencephalogram (EEG)\textsuperscript{[citation needed]}, temperature (T)\textsuperscript{[citation needed]},\\electrocardiogram (ECG)\textsuperscript{[citation needed]}, electromyogram (EMG)\textsuperscript{[citation needed]},\\
-     galvanic skin response (GSR)\textsuperscript{[citation needed]}, respiration (RSP)\textsuperscript{[citation needed]}, etc. 
+    Physiological signals are in response to the Central Nervous System (CNS) and the Autonomic Nervous System (ANS) of human body, in which emotion changes according to Cannon’s theory\cite{cannon_james-lange_1927}.
+    One of the major benefits of the latter method is that the CNS and the ANS are largely involuntarily activated and therefore cannot be easily controlled.
 
-    Physiological signals are in response to the Central Nervous System (CNS) and the Autonomic Nervous System (ANS) of human body, in which emotion changes according to \\Connon’s theory\textsuperscript{[citation needed]}.
-
-    One of the major benefits of the latter method is that the CNS and the ANS are largely involuntarily activated and therefore cannot be easily controlled.\textsuperscript{[citation needed]}
-    There have been a number of studies in the area of emotion recognition using physiological signals.\textsuperscript{[citation needed]}
-    Attempts have been made to establish a standard and a fixed relationship between emotion changes and physiological signals in terms of various types of signals, features, and classifiers.\textsuperscript{[citation needed]}
-    However, it was found that it was relatively difficult to precisely reflect emotional changes by using a single physiological signal.\textsuperscript{[citation needed]}
-    Therefore, emotion recognition using multiple physiological signals presents its significance in both research and real applications. 
-
-    Diagnosis of psychiatric diseases is currently accomplished with questionnaires filled in by the subjects, usually together with a specialist. 
-    Such questionnaires are often based on standard, formal scales, where questions range from the ability to cope with household activities, through social interactions, agitation, level of activity, to quality of sleep. 
-    In this paper, we propose a context aware framework to support semi-automation of the diagnosis of such diseases.
-
-    Post Traumatic Stress Disorder (PTSD), depression and suicide are major psychiatric problem in both military and civilian situation.\textsuperscript{[citation needed]}
-    These mental diseases are closely related to emotion change.\textsuperscript{[citation needed]}
-    
-    Additionally in rehabilitation applications, guiding patients through their rehabilitation training while adapting to the patients emotional state, would be highly motivating and might lead to a faster recovery.\textsuperscript{[citation needed]}
+    Post Traumatic Stress Disorder (PTSD), depression and suicide are major psychiatric problems in both military and civilians\cite{bryan_combat_2013, tarrier_suicide_2004}.
+    Additionally in rehabilitation applications, guiding patients through their rehabilitation training while adapting to the patients emotional state, would be highly motivating and might lead to a faster recovery\cite{evans_positive_2011}.
 
   \section{Motivation}
     Emotions have a major influence on human health. 
     Many disorders are found to be directly correlated with different emotional states.
-    Many current methods use facial expressions to recognize the emotional states but they are not reliable as they can be deliberately falsified. \\Emotion recognition systems based on physiological signals are more powerful as they are associated with the autonomic nervous system (ANS) and hence cannot be hidden or falsified\textsuperscript{[citation needed]}. These systems can be used to monitor old aged people and those with intellectual disabilities. Children with autism spectrum disorder(ASD) often find it difficult to recognize, express and control emotions\textsuperscript{[citation needed]}. \\
+    Many current methods use facial expressions to recognize the emotional states but they are not reliable as they can be deliberately falsified. Emotion recognition systems based on physiological signals are more powerful as they are associated with the autonomic nervous system (ANS) and hence cannot be hidden or falsified\textsuperscript{[citation needed]}. These systems can be used to monitor old aged people and those with intellectual disabilities. Children with autism spectrum disorder(ASD) often find it difficult to recognize, express and control emotions\textsuperscript{[citation needed]}.
     It can also be used to enhance road safety by monitoring driver's emotions\textsuperscript{[citation needed]}. 
-    The acquisition of the signals also requires less energy and storage capacity and opens pathways for future low cost solutions. The proposed system can also be used in human-computer interaction for machines to better understand humans\textsuperscript{[citation needed]}. Using the same system, various biosignals can also be bonded together to produce identification clues which can be used in domains like defence and banking\textsuperscript{[citation needed]}.
 
+    The acquisition of the signals also requires less energy and storage capacity and opens pathways for future low cost solutions. The proposed system can also be used in human-computer interaction for machines to better understand humans\textsuperscript{[citation needed]}. Using the same system, various biosignals can also be bonded together to produce identification clues which can be used in domains like defence and banking\textsuperscript{[citation needed]}.
 
   \section{Motivation}
     Emotions have a major influence on human health. 
@@ -100,10 +88,13 @@
 
 
   \section{Survey of State of the Art}
-    There are different models followed for emotion recognition. The Eckman's model is based on six discrete basic emotions: Happiness, Sadness, Surprise, Fear, Anger and Disgust\cite{ekman_universals_1987}. The Plutchik's model uses eight fundamental emotions: Joy, Trust, Fear, Surprise, Sadness, Disgust, Anger and Anticipation\cite{plutchik_nature_2001}. The third model\cite{russell_evidence_1977} focuses on two dimensional evaluation, like the valence-arousal model\cite{soleymani_multimodal_2012}.
+    There are different models followed for emotion recognition. 
+    The Eckman's model is based on six discrete basic emotions: Happiness, Sadness, Surprise, Fear, Anger and Disgust\cite{ekman_universals_1987}. 
+    The Plutchik's model uses eight fundamental emotions: Joy, Trust, Fear, Surprise, Sadness, Disgust, Anger and Anticipation\cite{plutchik_nature_2001}. 
+    The third model\cite{russell_evidence_1977} focuses on two dimensional evaluation, like the valence-arousal model\cite{soleymani_multimodal_2012}.
 
     Many researchers have only analysed the performance of their algorithms on datasets and have not done a real life implementation of them.
-    Cheng et al.\cite{cheng_novel_2017} have implemented a real time ecg based detection of negative emotions using the Bio Vid Emo DB dataset and they have obtained an accuracy of 79.46\% . 
+    Cheng et al.\cite{cheng_novel_2017} have implemented a real time ecg based detection of negative emotions using the Bio Vid Emo DB dataset and they have obtained an accuracy of 79.46\%. 
     Mishra et al.\cite{mishra_real_2017} have used speech signals to detect emotions - Happy, Sad, Anger, Neutral and they reported an accuracy of 95\% using a Raspberry Pi III.
     Guo et al.\cite{guo_heart_2016}have used PCA and SVM to classify emotions into negative and positive states using Heart Rate Variability(HRV) features with an accuracy of 71.4\%.
     Now we cite the work done using the MAHNOB-HCI dataset\cite{soleymani_multimodal_2012}. 
@@ -115,14 +106,16 @@
     We plan to 
     \begin{itemize}
       \item record physiological signals from subjects (ECG, GSR, SKT) and send it to the cloud for processing.
-      \item classify the signals into two emotional states - Arousal (high, low) and Valence (negative, positive).\cite{ben_emotion_2017}
-      \item We display the results on the monitor.
-      \item Additionally, we can develop an app which shows the results and also the ECG waveform data of the subject.
+      \item classify the signals into two emotional states - Arousal (high, low) and Valence (negative, positive)\cite{ben_emotion_2017}.
+      \item display the results on a monitor connected to the Raspberry Pi
+      \item develop an app which shows the results and the ECG waveform of the subject.
     \end{itemize}
 
   \section{Implementation Details}
-    We are using the recent MAHNOB-HCI dataset\cite{soleymani_multimodal_2012} for training our model. It has the reponses and physiological data (ECG. GSR, SKT) of 30 participants after inducing their emotional states by showing them movies. Studies find this dataset performing better than other common datasets and they attribute this to stronger emotions being induced in this dataset.\textsuperscript{[citation needed]}\\
-    We aim to have wearable sensors for our method.
+    We are using the recent MAHNOB-HCI dataset\cite{soleymani_multimodal_2012} for training our model. 
+    It contains the reponses and physiological data (ECG. GSR, SKT) of 30 participants after inducing their emotional states by showing them movies. 
+    Studies find this dataset performs better than other common datasets and they attribute this to stronger emotions being induced in this dataset.\textsuperscript{[citation needed]}
+    We aim to have wearable sensors for our method.\textsuperscript{[need more info]}
 
   \section{Project Timeline}
     PERT Chart\\
