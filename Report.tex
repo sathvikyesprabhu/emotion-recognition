@@ -56,7 +56,7 @@
     Experiences of negative emotion are inevitable and at times useful. Even so, when extreme, prolonged, or contextually inappropriate, negative emotions can trigger a wide array of problems for individuals and for society. 
     Fear and anxiety, for instance, fuel phobias and other anxiety disorders \cite{ohman_automatic_1993} and together with acute and chronic stress may compromise immune functioning and create susceptibilities to stress-related physical disorders \cite{oleary_stress_1990}. 
     For some individuals, sadness and grief may swell into unipolar depression \cite{nolen-hoeksema_response_1993}, which when severe can lead to immunosuppression \cite{oleary_stress_1990}, loss of work productivity \cite{coryell_enduring_1993}, and suicide \cite{chen_lifetime_1996}. 
-    Anger and its poor management have been implicated in the etiology of heart disease\cite{barefoot_hostility_1983, fredrickson2000hostility, scheier_person_1995} and some cancers\cite{eysenck_cancer_1994, greer_psychological_1975}, as well as in aggression and violence, especially in boys and men\cite{buss_evolution_2016, lemerise_development_2008}.
+    Anger and its poor management have been implicated in the etiology of heart disease\cite{barefoot_hostility_1983, fredrickson_hostility_2000, scheier_person_1995} and some cancers\cite{eysenck_cancer_1994, greer_psychological_1975}, as well as in aggression and violence, especially in boys and men\cite{buss_evolution_2016, lemerise_development_2008}.
 
     Emotion recognition has been applied in many areas such as safe driving \textsuperscript{[citation needed]}, health care\textsuperscript{[citation needed]} especially mental health monitoring \textsuperscript{[citation needed]}, social security \textsuperscript{[citation needed]}, and so on. 
     In general, emotion recognition methods could be classified into two major categories. 
@@ -96,10 +96,10 @@
 
     Many researchers have only analysed the performance of their algorithms on datasets and have not done a real life implementation of them.
     Cheng et al.\cite{cheng_novel_2017} have implemented a real time ecg based detection of negative emotions using the Bio Vid Emo DB dataset and they have obtained an accuracy of 79.46\% . 
-    Mishra et al.\cite{mishra_speech} have used speech signals to detect emotions - Happy, Sad, Anger, Neutral and they reported an accuracy of 95\% using a Raspberry Pi III.
+    Mishra et al.\cite{mishra_real_2017} have used speech signals to detect emotions - Happy, Sad, Anger, Neutral and they reported an accuracy of 95\% using a Raspberry Pi III.
     Guo et al.\cite{guo_heart_2016}have used PCA and SVM to classify emotions into negative and positive states using Heart Rate Variability(HRV) features with an accuracy of 71.4\%.
-    Now we cite the work done using the MAHNOB-HCI dataset\cite{mahnob_hci}. 
-    Ben and Lachiri\cite{ben_rpi} have obtained accuracies of 67.5\% for arousal and 68.75\% for valence using have used ECG, SKT, GSR and RESP . They have implemented the classification stage using the SVM RBF kernel on a Raspberry Pi III Model B.
+    Now we cite the work done using the MAHNOB-HCI dataset\cite{soleymani_multimodal_2012}. 
+    Ben and Lachiri\cite{ben_emotion_2017} have obtained accuracies of 67.5\% for arousal and 68.75\% for valence using have used ECG, SKT, GSR and RESP . They have implemented the classification stage using the SVM RBF kernel on a Raspberry Pi III Model B.
     Ferdinando et al.\cite{ferdinando_comparing_2016} compared ECG and HRV features and reported that dominant frequencies based on
     bivariate empirical mode decomposition (BEMD) analysis gave better accuracies than standard HRV analysis.
    
@@ -113,7 +113,7 @@
     \end{itemize}
 
   \section{Implementation Details}
-    We are using the recent MAHNOB-HCI dataset\cite{mahnob_hci} for training our model. It has the reponses and physiological data (ECG. GSR, SKT) of 30 participants after inducing their emotional states by showing them movies. Studies find this dataset performing better than other common datasets and they attribute this to stronger emotions being induced in this dataset.\textsuperscript{[citation needed]}\\
+    We are using the recent MAHNOB-HCI dataset\cite{soleymani_multimodal_2012} for training our model. It has the reponses and physiological data (ECG. GSR, SKT) of 30 participants after inducing their emotional states by showing them movies. Studies find this dataset performing better than other common datasets and they attribute this to stronger emotions being induced in this dataset.\textsuperscript{[citation needed]}\\
     We aim to have wearable sensors for our method.
 
   \section{Project Timeline}
