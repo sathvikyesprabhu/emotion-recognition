@@ -37,6 +37,10 @@
 \usepackage{hyperref}
 \hypersetup{colorlinks,linkcolor={blue},citecolor={blue},urlcolor={orange}} 
 
+\usepackage{graphicx}
+%Path relative to the main .tex file 
+\graphicspath{ {./images/} }
+
 \title{\textbf{Emotion recognition using physiological signals}}
 \author{
   Russel Shawn Dsouza\\
@@ -115,9 +119,19 @@
 
     We aim to have wearable sensors for our method.\textsuperscript{[need more info]}
 
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=\textwidth, scale=1.5]{schematic}
+      \caption{Block diagram of proposed implementation}
+    \end{figure}
+  
+  \newpage
   \section{Project Timeline}
-    PERT Chart\\
-    Week1...Week 2...Week 3...
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=\textwidth, scale=1.5]{pert_chart}
+      \caption{PERT Chart}
+    \end{figure}
   
   \newpage
   \bibliography{bibliography}
