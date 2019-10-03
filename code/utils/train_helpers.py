@@ -1,5 +1,5 @@
 import torch
-from config import config as cfg
+from code.config import config as cfg
 import logging
 import coloredlogs
 

@@ -11,4 +11,3 @@ if __name__ == "__main__":
 			read_ser = ser.readline()
 			f.write(read_ser)
 			print(read_ser)
-      
