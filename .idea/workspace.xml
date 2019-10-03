@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a24a14f4-4bee-481a-83fc-2476afbfb436" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Russel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Russel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/metrics/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/utils/PIL_helpers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/utils/train_helpers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +28,29 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="126">
+                <caret line="7" column="45" lean-forward="true" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="278" column="9" selection-start-line="278" selection-start-column="9" selection-end-line="278" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,6 +62,7 @@
         <option value="$PROJECT_DIR$/code/interfacing.py" />
         <option value="$PROJECT_DIR$/code/config/architecture.py" />
         <option value="$PROJECT_DIR$/code/utils/train_helpers.py" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
@@ -82,21 +103,7 @@
             <path>
               <item name="emotion-recognition" type="b2602c69:ProjectViewProjectNode" />
               <item name="emotion-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="datasets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="emotion-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="emotion-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="datasets" type="462c0819:PsiDirectoryNode" />
-              <item name="mahnob_hci" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="emotion-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="emotion-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="notebooks" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -137,16 +144,18 @@
       <updated>1570079547360</updated>
       <workItem from="1570079552940" duration="556000" />
       <workItem from="1570080129863" duration="172000" />
+      <workItem from="1570080324663" duration="804000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="728000" />
+    <option name="totallyTimeSpent" value="1532000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="712" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2536349" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25767368" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -161,12 +170,12 @@
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="right" id="SciView" order="0" show_stripe_button="false" weight="0.32956383" />
+      <window_info anchor="right" id="SciView" order="0" weight="0.32956383" />
       <window_info anchor="right" id="Database" order="1" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="5" weight="0.42810985" />
+      <window_info anchor="right" id="Terminal" order="5" visible="true" weight="0.42810985" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,10 +247,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="126">
+            <caret line="7" column="45" lean-forward="true" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="281" selection-start-line="281" selection-end-line="281" />
+        <state relative-caret-position="451">
+          <caret line="278" column="9" selection-start-line="278" selection-start-column="9" selection-end-line="278" selection-end-column="9" />
         </state>
       </provider>
     </entry>
