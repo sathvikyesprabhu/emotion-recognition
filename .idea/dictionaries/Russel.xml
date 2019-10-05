@@ -2,6 +2,8 @@
   <dictionary name="Russel">
     <words>
       <w>cuda</w>
+      <w>datasets</w>
+      <w>mahnob</w>
       <w>optim</w>
       <w>trello</w>
       <w>visdom</w>

@@ -1,13 +1,6 @@
-# My cool new model
+# Getting Started
 
-## Abstract
-
-This is what the model uses & what it does.
-
-## Getting Started
-
-Create a conda environment using the conda config file `environment.yml` or 
-the pip `requirements.txt` file.
+Create a conda environment using the conda config file `environment.yml`.
 The conda config file works only on the OS it was generated on (MacOS for me).
 
 ```bash
@@ -20,16 +13,10 @@ cd name-of-model
 ```
 Install all dependencies using `conda install`.
 
-Add your datasets into `datasets/`.
+Access to DREAMER and [MAHNOB-HCI](https://mahnob-db.eu) is given only to .edu accounts on request.  
+Once downloaded, add your datasets into `datasets/`.
 
 ### Training
-
-Start the `visdom` server.  
-```bash
-visdom
-```
-
-Run the project.  
 
 ```bash
 python main.py --phase train
@@ -38,15 +25,5 @@ python main.py --phase train
 ### Testing
 
 ```bash
-python main.py --phase test --in_path xxx/xxx.jpg  --out_path ./results/
+python main.py --phase test
 ```
-
-## Results
-
-This is what my cool new model achieved in testing.
-Here are some graphs and tables.
-
-## References
-
-* [Some awesome paper](www.github.com/rshwndsz)
-* [Great blog](www.github.com/rshwndsz)
