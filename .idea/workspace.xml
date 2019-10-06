@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a24a14f4-4bee-481a-83fc-2476afbfb436" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="a24a14f4-4bee-481a-83fc-2476afbfb436" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,20 +23,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="198">
-                <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -92,12 +77,6 @@
             <path>
               <item name="emotion-recognition" type="b2602c69:ProjectViewProjectNode" />
               <item name="emotion-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="notebooks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="emotion-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="emotion-recognition" type="462c0819:PsiDirectoryNode" />
               <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -145,16 +124,15 @@
       <workItem from="1570079552940" duration="556000" />
       <workItem from="1570080129863" duration="172000" />
       <workItem from="1570080324663" duration="6567000" />
-      <workItem from="1570271820417" duration="2094000" />
+      <workItem from="1570271820417" duration="2486000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9389000" />
+    <option name="totallyTimeSpent" value="9781000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="712" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26817447" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -340,7 +318,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
+        <state split_layout="FIRST">
           <first_editor relative-caret-position="198">
             <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           </first_editor>
