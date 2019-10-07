@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 import os
 import re
+import pandas as pd
 import xml.etree.ElementTree as ET
 
 # Maps
@@ -53,11 +54,15 @@ def construct(dataset_root):
     dataset_dirs = sorted(os.listdir(dataset_root), key=int)
     dataset_dirs = [dataset_path / dataset_dir for dataset_dir in dataset_dirs]
 
-    dataset = []
+    dataset = pd.DataFrame(columns=['ECG1', 'ECG2', 'ECG3',
+                                    'status', 'label', 'feltEmo',
+                                    'feltVlnc', 'feltArsl', 'feltCtrl',
+                                    'feltPred' 'subject', 'trial',
+                                    'bdf_file_path', 'session_file_path'])
 
     bdf_file_pattern = re.compile(r'Part_(?P<subject>\d+)_S_Trial(?P<trial>\d+)_emotion')
 
-    for dataset_dir in dataset_dirs:
+    for i, dataset_dir in enumerate(dataset_dirs):
         bdf_file = list(dataset_dir.glob("*.bdf"))
         if bdf_file:
             bdf_file = bdf_file[0]
@@ -81,32 +86,34 @@ def construct(dataset_root):
             root = ET.parse(session_file).getroot()
 
             # Append to dataset
-            dataset.append({
-                'ECG1': sigbufs[0],
-                'ECG2': sigbufs[1],
-                'ECG3': sigbufs[2],
-                'status': sigbufs[3],
-                'label': [int(emotion_number_map[video_emotion_map[root.attrib['mediaFile']]])],
-                'metadata': {
-                    'feltEmo': int(root.attrib['feltEmo']),
-                    'feltArsl': int(root.attrib['feltArsl']),
-                    'feltVlnc': int(root.attrib['feltVlnc']),
-                    'feltCtrl': int(root.attrib['feltCtrl']),
-                    'feltPred': int(root.attrib['feltPred']),
-                    'subject': subject,
-                    'trial': trial
-                }
-            })
+            dataset.loc[i, 'ECG1'] = sigbufs[0]
+            dataset.loc[i, 'ECG2'] = sigbufs[1]
+            dataset.loc[i, 'ECG3'] = sigbufs[2]
+            dataset.loc[i, 'status'] = sigbufs[3]
+            dataset.loc[i, 'label'] = int(emotion_number_map[video_emotion_map[root.attrib['mediaFile']]])
+            dataset.loc[i, 'feltEmo'] = int(root.attrib['feltEmo'])
+            dataset.loc[i, 'feltArsl'] = int(root.attrib['feltArsl'])
+            dataset.loc[i, 'feltVlnc'] = int(root.attrib['feltVlnc'])
+            dataset.loc[i, 'feltCtrl'] = int(root.attrib['feltCtrl'])
+            dataset.loc[i, 'feltPred'] = int(root.attrib['feltPred'])
+            dataset.loc[i, 'subject'] = subject
+            dataset.loc[i, 'trial'] = trial
+            dataset.loc[i, 'bdf_file_path'] = bdf_file.as_posix()
+            dataset.loc[i, 'session_file_path'] = session_file.as_posix()
+
     return dataset
 
 
 if __name__ == "__main__":
     test_dataset_root = '/Users/Russel/myProjects/emotion-recognition/code/datasets/mahnob_hci/Sessions/'
     test_dataset = construct(test_dataset_root)
+    # Print number of rows in dataset
     print(len(test_dataset))
+    # Print out columns in dataset
     print(test_dataset[0].keys())
 
+    # Plot ECG1 and status of 5th entry in dataset
     fig, ax = plt.subplots(2, 1)
-    ax[0].plot(test_dataset[4]['ECG1'][:-250])
-    ax[1].plot(test_dataset[4]['status'][:-250])
+    ax[0].plot(test_dataset.loc[4, :]['ECG1'][:-250])
+    ax[1].plot(test_dataset.loc[4, :]['status'][:-250])
     plt.show()
