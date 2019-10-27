@@ -18,9 +18,12 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if args.phase == 'train':
+        # TODO Code training loop
+        # TODO Code validation loop
         pass
 
     elif args.phase == 'test':
+        # TODO Code testing loop
         pass
 
     else:

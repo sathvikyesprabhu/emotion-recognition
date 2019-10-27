@@ -103,8 +103,10 @@ def construct(dataset_root):
 
     return dataset
 
+# TODO Interface data and model
 
 if __name__ == "__main__":
+    # TODO Add automated download of dataset using wget
     test_dataset_root = '/Users/Russel/myProjects/emotion-recognition/code/datasets/mahnob_hci/Sessions/'
     test_dataset = construct(test_dataset_root)
     # Print number of rows in dataset

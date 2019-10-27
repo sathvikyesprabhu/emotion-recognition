@@ -17,3 +17,5 @@ project_root = os.getcwd()
 dataset_root = os.path.join(project_root, 'datasets', 'dataset_name')
 model_path = os.path.join(project_root, 'checkpoints', 'model_best.pth')
 results_dir = os.path.join(project_root, 'results')
+
+# TODO Add hyperparameters to config/CLI

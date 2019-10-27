@@ -10,4 +10,5 @@ if __name__ == "__main__":
 		while True:
 			read_ser = ser.readline()
 			f.write(read_ser)
+			# TODO Write to buffers and send to model
 			print(read_ser)
