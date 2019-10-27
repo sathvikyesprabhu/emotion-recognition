@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a24a14f4-4bee-481a-83fc-2476afbfb436" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/emotion-recognition.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/emotion-recognition.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/models/SampleNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/models/SampleNet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/notebooks/ecg_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/notebooks/ecg_analysis.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,12 +29,12 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/code/models/SampleNet.py">
+        <entry file="file://$PROJECT_DIR$/code/arduino_pi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+            <state relative-caret-position="126">
+              <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -62,10 +64,12 @@
         <option value="$PROJECT_DIR$/code/data/construct_dataset.py" />
         <option value="$PROJECT_DIR$/code/main.py" />
         <option value="$PROJECT_DIR$/code/models/SampleNet.py" />
+        <option value="$PROJECT_DIR$/code/serial.py" />
+        <option value="$PROJECT_DIR$/code/arduino_pi.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="712" />
@@ -118,7 +122,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -137,7 +141,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.arduino_pi">
+    <configuration name="arduino_pi" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="emotion-recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/arduino_pi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="construct_dataset" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="emotion-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,8 +186,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.construct_dataset" />
+      <item itemvalue="Python.arduino_pi" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.arduino_pi" />
         <item itemvalue="Python.construct_dataset" />
       </list>
     </recent_temporary>
@@ -182,18 +213,19 @@
       <workItem from="1570271820417" duration="2740000" />
       <workItem from="1570444048638" duration="2271000" />
       <workItem from="1570448206956" duration="409000" />
-      <workItem from="1570696594890" duration="1255000" />
+      <workItem from="1570696594890" duration="1442000" />
+      <workItem from="1571909722230" duration="1017000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13970000" />
+    <option name="totallyTimeSpent" value="15174000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="712" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="706" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27625203" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22617124" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -203,7 +235,7 @@
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" weight="0.3279743" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.7741935" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.77361566" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -244,6 +276,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/emotion_recognition$construct_dataset.coverage" NAME="construct_dataset Coverage Results" MODIFIED="1570447091832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code/data" />
+    <SUITE FILE_PATH="coverage/emotion_recognition$arduino_pi.coverage" NAME="arduino_pi Coverage Results" MODIFIED="1571910667153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+    <SUITE FILE_PATH="coverage/emotion_recognition$serial.coverage" NAME="serial Coverage Results" MODIFIED="1571910604747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/code/interfacing.py">
@@ -302,79 +336,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Subjects/subject30.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/30/session.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/4/session.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/140/session.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/132/session.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/2/session.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/3810/session.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/2618/session.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/522/session.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Subjects/subject12.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Subjects/subject16.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Subjects/subject11.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Subjects/subject1.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Subjects/subject3.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/1432/session.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/14/session.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="126" lean-forward="true" selection-start-line="11" selection-start-column="126" selection-end-line="11" selection-end-column="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/10/session.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/3408/session.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/8/session.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Subjects/subject30.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/30/session.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/4/session.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/140/session.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/132/session.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/2/session.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/3810/session.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/2618/session.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/522/session.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Subjects/subject12.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Subjects/subject16.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Subjects/subject11.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Subjects/subject1.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Subjects/subject3.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/1432/session.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/14/session.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/10/session.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/3408/session.xml" />
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_hci/Sessions/8/session.xml" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -392,13 +372,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/data/features.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/code/data/features.py" />
     <entry file="file://$PROJECT_DIR$/code/data/construct_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="614">
@@ -412,28 +386,7 @@
     <entry file="file://$PROJECT_DIR$/code/notebooks/construct_dataset.ipynb">
       <provider selected="true" editor-type-id="jupyter-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_ecg.csv">
-      <provider editor-type-id="csv-text-editor" />
-      <provider selected="true" editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
-          <column index="0" width="100" />
-          <column index="1" width="100" />
-          <column index="2" width="100" />
-          <column index="3" width="100" />
-          <column index="4" width="100" />
-          <column index="5" width="100" />
-          <column index="6" width="100" />
-          <column index="7" width="100" />
-          <column index="8" width="100" />
-          <column index="9" width="100" />
-          <column index="10" width="100" />
-          <column index="11" width="100" />
-          <column index="12" width="100" />
-          <column index="13" width="100" />
-          <column index="14" width="100" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/code/datasets/mahnob_ecg.csv" />
     <entry file="file://$PROJECT_DIR$/code/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -457,7 +410,14 @@
     <entry file="file://$PROJECT_DIR$/code/models/SampleNet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/arduino_pi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
         </state>
       </provider>
     </entry>
