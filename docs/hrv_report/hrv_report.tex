@@ -50,15 +50,19 @@
   Sathvik S Prabhu\\
   171EC146
 }
-\date{}
+\date{13 November, 2019}
+
 
 \begin{document}
   \maketitle
-  % TODO Add logo and department
+  \thispagestyle{empty}
+  % TODO Change titlepage to add logo
 
   \newpage
   \tableofcontents
+  \thispagestyle{empty}
 
+  \setcounter{page}{1}
   \newpage
   \section{Introduction}
   The study and analysis of short-term and long-term variability in heart rate reflects the functioning of the vagal nerve and the sympathetic function of the autonomic nervous system, respectively.
@@ -67,8 +71,15 @@
   In neurologic disorders such as brain damage, the Guillain-Barre syndrome and uremic neuropathy, heart rate variability analysis can provide insight into which division of the autonomic nervous system is most affected.
   The analysis of the effects of drugs can also be studied using heart rate variability as it can also shed light on the mode of action of drugs.
 
-  A typical ECG signal is characterized by a P wave, a QRS complex consisting of Q,R and S waves and a T wave.
+  A typical ECG signal is characterized by a P wave, a QRS complex consisting of Q,R and S waves and a T wave as shown in figure \ref{fig:pqrst}.
   The automatic detection of the QRS complex or the R peaks in a long term electrocardiogram (ECG) signal is one of the most important steps in the diagnosis of cardiac disorders, biometric and ECG coding systems.
+
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.2]{images/SinusRhythmLabels.jpg}
+    \caption{A typical ECG wave showing the P wave, QRS complex and S, T waves\cite{wiki:SinusRythmLabels}}
+    \label{fig:pqrst}
+  \end{figure}
 
   The P wave represents atrial depolarisation, or the contraction of the two atria.
   The PR interval indicates the time taken for the electrical impulse to reach the ventricles from the atria.
@@ -103,10 +114,17 @@
   Signal acquisition, Pre-processing, extracting features, plotting peaks, HR, Poincare plot
 
 
+  \newpage
   \section{Our implementation}
   % TODO Add images of our implementation
-  \underline{Three sensor pads} are placed on specific regions of the body based on the concept of Einthoven’s triangle\cite{abi2019einthoven}, which is an inverted equilateral triangle. The voltages at these points give a net potential of zero, making the electrode setup electrically equilateral.
+  \underline{Three sensor pads} are placed on specific regions of the body based on the concept of Einthoven’s triangle\cite{abi2019einthoven}, which is an inverted equilateral triangle as shown in figure \ref{fig:eithoven_triangle}. The voltages at these points give a net potential of zero, making the electrode setup electrically equilateral.
 
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.1]{images/eithoven_triangle.png}
+    \caption{Eithoven's triangle\cite{cvp:ECG_eithoven}}
+    \label{fig:eithoven_triangle}
+  \end{figure}
 
   \underline{AD8232}\cite{ae:ad8232} module which is an integrated signal conditioning block for ECG and other biopotential signals.
   It is designed to extract, amplify, and filter small biopotential signals in the presence of noisy conditions, such as those created by motion or remote electrode placement.
@@ -147,6 +165,7 @@
   Data can be sent to the cloud, processed there and then to the app
 
 
+  \newpage
   \bibliography{bibliography}
   \bibliographystyle{ieeetr}
 \end{document}
