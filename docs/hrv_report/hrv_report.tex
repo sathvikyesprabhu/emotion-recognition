@@ -33,6 +33,8 @@
 \newtheorem{exer}{Exercise}
 \newtheorem{note}{Note}
 
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+
 \usepackage[superscript,biblabel]{cite}
 \usepackage{hyperref}
 \hypersetup{colorlinks,linkcolor={blue},citecolor={blue},urlcolor={orange}}
@@ -59,23 +61,20 @@
   % TODO Change titlepage to add logo
 
   \newpage
-  \begin{center}
-  \begin{large}
-  \textbf{Abstract}
-  \end{large}
-  \end{center}
-
-  A portable, low power and low cost system is proposed to detect the heart rate variability features from a recorded ECG signal. The ECG is recorded with the help of the AD8232 signal condidtioning unit from where it is sent to an Arduino Uno. The signal data is then serially transmitted to a Raspberry Pi which handles the signal processing tasks. After filtering and normalization of the ECG, a peak detection algorithm is used to identify peaks. Based on this, various heart rate variability indices including the mean RR interval duration, standard deviation of RR intervals, RMS value of the successive differences of RR intervals, number of pairs of successive RR intervals that differ by more than 50 ms are extracted from the signal. The plots of the peaks detected, heart rate variation and the Poinare plot are then displayed on a monitor. The heart rate variability features can be used by physicians for during the diagnosis of different heart related disorders. These features can also be used for more complicated tasks like identification of stress level or detection of cardiac arrhythmia. More accurate sensors or  multiple sensors which record different physiological signals can be used together to improve and give a more holistic view during diagnosis of various disorders.
-  
-  \textbf{Keywords:} peak detection, Raspberry Pi, heart rate variablity, Poincare plot, Arduino
-
-  
-  \newpage
   \tableofcontents
   \thispagestyle{empty}
 
   \setcounter{page}{1}
   \newpage
+  \begin{center}
+    \large{\textbf{Abstract}}\\
+    A portable, low power and low cost system is proposed to detect the heart rate variability features from a recorded ECG signal.
+    The ECG is recorded with the help of the AD8232 signal condidtioning unit from where it is sent to an Arduino Uno.
+    The signal data is then serially transmitted to a Raspberry Pi which handles the signal processing tasks. After filtering and normalization of the ECG, a peak detection algorithm is used to identify peaks. Based on this, various heart rate variability indices including the mean RR interval duration, standard deviation of RR intervals, RMS value of the successive differences of RR intervals, number of pairs of successive RR intervals that differ by more than 50 ms are extracted from the signal. The plots of the peaks detected, heart rate variation and the Poinare plot are then displayed on a monitor. The heart rate variability features can be used by physicians for during the diagnosis of different heart related disorders. These features can also be used for more complicated tasks like identification of stress level or detection of cardiac arrhythmia. More accurate sensors or  multiple sensors which record different physiological signals can be used together to improve and give a more holistic view during diagnosis of various disorders.
+
+    \textbf{Keywords:} peak detection, Raspberry Pi, heart rate variablity, Poincare plot, Arduino
+  \end{center}
+
   \section{Introduction}
   Electrocardiography (ECG or EKG) is a representation of the electrical activity of the heart as it changes with time. It is a plot of voltage, which is usually expressed in millivolts (mV), against time in seconds (s). This measurement is taken by placing electrodes on the skin at different points of the body. The analysis of ECG is done by physicians to assess various abnormalities associated with the heart and other cardiac functions. The heart rate variability (HRV) is a broad term given to the cycle to cycle variation in the ECG.
 
@@ -102,8 +101,7 @@
   The T wave, which can be seen as a small wave after the QRS complex, represents ventricular repolarisation.
   The RR interval starts at the peak of one R wave and ends at the peak of the next R wave. It represents the time between two QRS complexes.
 
-\subsection{Motivation}
-
+  \subsection{Motivation}
   In recent years, cardiac diseases have drawn great attention as they are the leading cause of mortality in developed countries.
   Long term monitoring of electrocardiogram (ECG) is therefore widely used for those with cardiac ailments.
   Many hardware systems have been proposed for ECG monitoring, which can be differentiated into recording and analyzing systems.
@@ -115,8 +113,7 @@
   In the era of IoT, it is necessary to implement a pocket friendly method which is both portable and convenient.
 
 
-  \section{Literature Review}
-  \subsection{Survey of the state of the art}
+  \section{Survey of the state of the art}
   Paulo et. al.\cite{melillo2011nonlinear} have used nonlinear features of HRV for automatically detecting real-life stress conditions. Features such as the approximate entropy, correlation dimesnion, fluctuation Analysis, recurrence Plot and the poincare plot were used along with the linear discriminant analysis (LDA) classifier to detect the stress level.
 
   Christov et. al. \cite{christov2018ranking} studied and ranked the most reliable heart rate variability features for the detection of atrial fibrillation in single-lead ECG. The identified features were the proportion of RR intervals differing by more than 50 ms from the preceding RR interval, Poincare plot geometry estimated by the ratio of the minor-to-major semi-axes of the fitted ellipse, P-wave presence in the average beat, the mean percentage of the RR interval first differences and the mean correlation of all beats against the average beat.
@@ -130,11 +127,11 @@
 
   \section{Features we wish to implement}
   \begin{itemize}
-  \item \textbf{ECG Signal acquisition:} The ECG signal is obtained with the help of the sensor pads and the AD8232 unit.
-  \item \textbf{Filtering and Pre-processing:} On the Raspberry Pi, the ECG signal is filtered and smoothened.
-  \item \textbf{Detection of peaks:} A threshold based peak detection algorithm is applied to detect peaks.
-  \item \textbf{Extracting features:} Time domain features are extracted after peak detection.
-  \item \textbf{Plots:} The ECG peaks, change in heart rate and Poincare plots are displayed on the monitor along with the feature values.
+    \item \textbf{ECG Signal acquisition:} The ECG signal is obtained with the help of the sensor pads and the AD8232 unit.
+    \item \textbf{Filtering and Pre-processing:} On the Raspberry Pi, the ECG signal is filtered and smoothened.
+    \item \textbf{Detection of peaks}: A threshold based peak detection algorithm is applied to detect peaks.
+    \item \textbf{Extracting features}: Time domain features are extracted after peak detection.
+    \item \textbf{Plots}: The ECG peaks, change in heart rate and Poincare plots are displayed on the monitor along with the feature values.
   \end{itemize}
 
   \section{Implementation}
@@ -154,7 +151,7 @@
   After an abrupt signal change that rails the amplifier (such as a leads off condition), the AD8232 automatically adjusts to a higher filter cutoff.
   This feature allows the AD8232 to recover quickly, and therefore, to take valid measurements soon after connecting the electrodes to the subject.
 
-  \underline{Arduino Uno} used to record the data from the AD8232 at a fixed sampling rate, say 100 Hz. 
+  \underline{Arduino Uno} used to record the data from the AD8232 at a fixed sampling rate, say 100 Hz.
  The data is then serially transmitted to the Raspberry Pi which can handle more complex processes using more computing power.   The Arduino handles the interfacing and collection of signal data and the Raspberry Pi focuses on the more power intensive tasks like signal processing and machine learning, if any.
 
   A \underline{Raspberry Pi 3B+} is used to process and analyse the signals.
@@ -182,10 +179,10 @@
     The analysis of this plot is a geometrical and nonlinear method to assess the dynamics of HRV.
     The degree of heart failure can be evaluated quantitatively through the computation of the standard deviation (SD) indexes of the plot\cite{hsu2012poincare}.
   \end{itemize}
-  
+
   \section{Results}
   The values of the various features obtained from a sample of the recorded ECG signal are tabulated.
-  
+
   \begin{figure}
     \centering
     \subfloat[Subfigure 1 list of figures text][Raw Dataset ECG]
@@ -212,13 +209,13 @@
       \label{fig:subfig4}
     }
     \caption{Processing of the ECG signal}
-    \label{fig:globfig}
+    \label{fig:globfig1}
   \end{figure}
 
   \begin{center}
     \begin{tabular}{|c | c |}
       \hline
-      \textbf{Feature} & \textbf{Value}  \\ 
+      \textbf{Feature} & \textbf{Value}  \\
       \hline\hline
       Average HR & 77.4243  \\
       \hline
@@ -238,7 +235,7 @@
   \begin{figure}
     \centering
     \qquad
-    \subfloat[Subfigure 5 list of figures text][HR of Dataset ECG ]
+    \subfloat[Subfigure 5 list of figures text][HR of Dataset ECG]
     {
       \includegraphics[width=0.4\textwidth]{ecg_hrv}
       \label{fig:subfig5}
@@ -262,20 +259,20 @@
       \label{fig:subfig8}
     }
     \caption{Plots obtained}
-    \label{fig:globfig}
+    \label{fig:globfig2}
   \end{figure}
 
 
   \newpage
   \section{Conclusion}
   A portable, low power and low cost system is implemented to record ECG signals from the subject and display the heart rate variability features. These features can be used by physicians during the diagnosis of heart related ailments or even a few neuro-physiological disorders. The accuracy of the features can be improved by using sensors which give better accuracy using which the more intricate features of the signal can be extracted.
-  
+
   These features can also be used for other tasks like emotion recognition or detection of cardiac arrhythmia. One can use multiple sensors which record various signals from the body and extract features from different signals. These features can be then processed, maybe using an artificial neural network, for more complex tasks which require a more holistic view of things.
-  
-  In this era of IoT (Internet of Things), a bigger ecosystem can be built where the signal data collected can be sent to a remote server, processed there and and then the results can be accessed by the end user through a mobile app. 
-  
-  
-  
+
+  In this era of IoT (Internet of Things), a bigger ecosystem can be built where the signal data collected can be sent to a remote server, processed there and and then the results can be accessed by the end user through a mobile app.
+
+
+
   \newpage
   \bibliography{bibliography}
   \bibliographystyle{ieeetr}
