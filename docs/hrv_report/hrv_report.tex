@@ -64,6 +64,11 @@
 
   \setcounter{page}{1}
   \newpage
+  \begin{center}
+    \large{\textbf{Abstract}}
+  \end{center}
+  % TODO Finish abstract
+
   \section{Introduction}
   Electrocardiography (ECG or EKG) is a representation of the electrical activity of the heart as it changes with time. It is a plot of voltage, which is usually expressed in millivolts (mV), against time in seconds (s). This measurement is taken by placing electrodes on the skin at different points of the body. The analysis of ECG is done by doctors to assess various abnormalities associated with the heart and other cardiac functions. The heart rate variability (HRV) is a broad term given to the cycle to cycle variation in the ECG.
 
@@ -90,8 +95,7 @@
   The T wave, which can be seen as a small wave after the QRS complex, represents ventricular repolarisation.
   The RR interval starts at the peak of one R wave and ends at the peak of the next R wave. It represents the time between two QRS complexes.
 
-\subsection{Motivation}
-
+  \subsection{Motivation}
   In recent years, cardiac diseases have drawn great attention as they are the leading cause of mortality in developed countries.
   Long term monitoring of electrocardiogram (ECG) is therefore widely used for those with cardiac ailments.
   Many hardware systems have been proposed for ECG monitoring, which can be differentiated into recording and analyzing systems.
@@ -103,8 +107,7 @@
   In the era of IoT, it is necessary to implement a pocket friendly method which is both portable and convenient.
 
 
-  \section{Literature Review}
-  \subsection{Survey of the state of the art}
+  \section{Survey of the state of the art}
   Paulo et. al.\cite{melillo2011nonlinear} have used nonlinear features of HRV for automatically detecting real-life stress conditions. Features such as the approximate entropy, correlation dimesnion, fluctuation Analysis, recurrence Plot and the poincare plot were used along with the linear discriminant analysis (LDA) classifier to detect the stress level.
 
   Christov et. al. \cite{christov2018ranking} studied and ranked the most reliable heart rate variability features for the detection of atrial fibrillation in single-lead ECG. The identified features were the proportion of RR intervals differing by more than 50 ms from the preceding RR interval, Poincare plot geometry estimated by the ratio of the minor-to-major semi-axes of the fitted ellipse, P-wave presence in the average beat, the mean percentage of the RR interval first differences and the mean correlation of all beats against the average beat.
@@ -116,13 +119,13 @@
   High HRV has also been observed in different psychological conditions associated with symptoms of impaired behavioral and emotional regulation\cite{thayer2009claude, schulz2008negative}.
 
 
-  \subsection{Features we wish to implement}
+  \section{Features we wish to implement}
   \begin{itemize}
-  \item \textbf{ECG Signal acquisition:} The ECG signal is obtained with the help of the sensor pads and the AD8232 unit.
-  \item \textbf{Filtering and Pre-processing:} On the Raspberry Pi, the ECG signal is filtered and smoothened.
-  \item \textbf{Detection of peaks:} A threshold based peak detection algorithm is applied to detect peaks.
-  \item \textbf{Extracting features:} Time domain features are extracted after peak detection.
-  \item \textbf{Plots:} The ECG peaks, change in heart rate and Poincare plots are displayed on the monitor along with the feature values.
+    \item \textbf{ECG Signal acquisition:} The ECG signal is obtained with the help of the sensor pads and the AD8232 unit.
+    \item \textbf{Filtering and Pre-processing:} On the Raspberry Pi, the ECG signal is filtered and smoothened.
+    \item \textbf{Detection of peaks}: A threshold based peak detection algorithm is applied to detect peaks.
+    \item \textbf{Extracting features}: Time domain features are extracted after peak detection.
+    \item \textbf{Plots}: The ECG peaks, change in heart rate and Poincare plots are displayed on the monitor along with the feature values.
   \end{itemize}
 
 
@@ -198,7 +201,7 @@
       \label{fig:subfig4}
     }
     \caption{The peak detection algorithm works flawlessly on both the dataset ECG and the recorded ECG.}
-    \label{fig:globfig}
+    \label{fig:globfig1}
   \end{figure}
 
   \begin{center}
@@ -224,7 +227,7 @@
   \begin{figure}
     \centering
     \qquad
-    \subfloat[Subfigure 5 list of figures text][HR of Dataset ECG ]
+    \subfloat[Subfigure 5 list of figures text][HR of Dataset ECG]
     {
       \includegraphics[width=0.4\textwidth]{ecg_hrv}
       \label{fig:subfig5}
@@ -248,7 +251,7 @@
       \label{fig:subfig8}
     }
     \caption{Plots obtained}
-    \label{fig:globfig}
+    \label{fig:globfig2}
   \end{figure}
 
 
