@@ -56,9 +56,6 @@
 
 
 \begin{document}
-  % TODO Check order of names, logo, department, date
-  % TODO Add department
-  % TODO Add date
   \begin{titlepage}
     \begin{center}
       \LARGE{\textbf{Embedded System Design}}\\
@@ -77,8 +74,8 @@
     \includegraphics[scale=0.5]{nitk_logo}\\
     \vspace*{3em}
     Department of Electronics and Communication Engg.\\
-National Institute of Technology Karnataka, Surathkal\\
-Srinivasanagar 575 025, Karnataka, India
+    National Institute of Technology Karnataka, Surathkal\\
+    Srinivasanagar 575 025, Karnataka, India
     \end{center}
   \end{titlepage}
   \thispagestyle{empty}
@@ -125,7 +122,7 @@ Srinivasanagar 575 025, Karnataka, India
   The T wave, which can be seen as a small wave after the QRS complex, represents ventricular repolarisation.
   The RR interval starts at the peak of one R wave and ends at the peak of the next R wave. It represents the time between two QRS complexes.
 
-  \subsection{Motivation}
+  \section{Motivation}
   In recent years, cardiac diseases have drawn great attention as they are the leading cause of mortality in developed countries.
   Long term monitoring of electrocardiogram (ECG) is therefore widely used for those with cardiac ailments.
   Many hardware systems have been proposed for ECG monitoring, which can be differentiated into recording and analyzing systems.
@@ -157,6 +154,7 @@ Srinivasanagar 575 025, Karnataka, India
     \item \textbf{Extracting features}: Time domain features are extracted after peak detection.
     \item \textbf{Plots}: The ECG peaks, change in heart rate and Poincare plots are displayed on the monitor along with the feature values.
   \end{itemize}
+
 
   \section{Implementation}
   \underline{Three sensor pads} are placed on specific regions of the body based on the concept of Einthoven’s triangle\cite{abi2019einthoven}, which is an inverted equilateral triangle as shown in figure \ref{fig:eithoven_triangle}. The voltages at these points give a net potential of zero, making the electrode setup electrically equilateral.
@@ -288,13 +286,12 @@ Srinivasanagar 575 025, Karnataka, India
 
 
   \newpage
-  \section{Conclusion}
+  \section{Conclusions}
   A portable, low power and low cost system is implemented to record ECG signals from the subject and display the heart rate variability features. These features can be used by physicians during the diagnosis of heart related ailments or even a few neuro-physiological disorders. The accuracy of the features can be improved by using sensors which give better accuracy using which the more intricate features of the signal can be extracted.
 
   These features can also be used for other tasks like emotion recognition or detection of cardiac arrhythmia. One can use multiple sensors which record various signals from the body and extract features from different signals. These features can be then processed, maybe using an artificial neural network, for more complex tasks which require a more holistic view of things.
 
   In this era of IoT (Internet of Things), a bigger ecosystem can be built where the signal data collected can be sent to a remote server, processed there and and then the results can be accessed by the end user through a mobile app.
-
 
 
   \newpage
