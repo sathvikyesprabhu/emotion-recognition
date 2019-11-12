@@ -39,6 +39,7 @@
 \hypersetup{colorlinks,linkcolor={blue},citecolor={blue},urlcolor={orange}}
 
 \usepackage{graphicx}
+\usepackage[lofdepth,lotdepth]{subfig}
 %Path relative to the main .tex file
 \graphicspath{ {./images/} }
 
@@ -65,9 +66,8 @@
   \setcounter{page}{1}
   \newpage
   \section{Introduction}
-<<<<<<< HEAD
+
   
-=======
   The study and analysis of short-term and long-term variability in heart rate reflects the functioning of the vagal nerve and the sympathetic function of the autonomic nervous system, respectively.
   Heart rate variability can therefore be not only used as a monitoring tool in the diagnosis of cardiac ailments but also in clinical conditions with altered autonomic nervous system function.
   n diabetic patients, low heart rate variability is associated with an increased risk for sudden cardiac death.
@@ -91,13 +91,8 @@
   The T wave, which can be seen as a small wave after the QRS complex, represents ventricular repolarisation.
   The RR interval starts at the peak of one R wave and ends at the peak of the next R wave. It represents the time between two QRS complexes.
 
-  On one hand, low heart rate variability (HRV) has been demonstrated to be a major risk factor leading to various conditions, particularly cardiovascular disorders\cite{kamath1987heart}.
-  On the other hand, high HRV has been shown to be an indicator of improved executive functions, such as attentional processing or impulse control\cite{appelhans2006heart, thayer2005psychosomatics}.
-  High HRV has also been observed in different psychological conditions associated with symptoms of impaired behavioral and emotional regulation\cite{thayer2009claude, schulz2008negative}.
+\subsection{Motivation}
 
->>>>>>> upstream/master
-
-  \section{Motivation}
   In recent years, cardiac diseases have drawn great attention as they are the leading cause of mortality in developed countries.
   Long term monitoring of electrocardiogram (ECG) is therefore widely used for those with cardiac ailments.
   Many hardware systems have been proposed for ECG monitoring, which can be differentiated into recording and analyzing systems.
@@ -109,17 +104,32 @@
   In the era of IoT, it is necessary to implement a pocket friendly method which is both portable and convenient.
 
 
-  \section{Survey of the state of the art}
-  % TODO Move technical part of introduction here
+  \section{Literature Review}
+  \subsection{Survey of the state of the art}
+  Paulo et. al.\cite{melillo_nonlinear_2011} have used nonlinear features of HRV for automatically detecting real-life stress conditions. Features such as the approximate entropy, correlation dimesnion, fluctuation Analysis, recurrence Plot and the poincare plot were used along with the linear discriminant analysis (LDA) classifier to detect the stress level.
+  
+  Christov et. al. \cite{christov_ranking_2018} studied and ranked the most reliable heart rate variability features for the detection of atrial fibrillation in single-lead ECG. The identified features were the proportion of RR intervals differing by more than 50 ms from the preceding RR interval, Poincare plot geometry estimated by the ratio of the minor-to-major semi-axes of the fitted ellipse, P-wave presence in the average beat, the mean percentage of the RR interval first differences and the mean correlation of all beats against the average beat. 
+  
+  Ni et. al.\cite{ni_multiscale_2019} have proposed a method to recognize the severity of hypertension using HRV features. They extracted 18 HRV multidimensional features in the time, frequency, and nonlinear domain. Then the temporal pyramid pooling method was designed to reduce feature dimensions. Multifactor analysis of variance (MANOVA) was later applied to filter the related features and establish the hypertension recognizing model with relevant features to efficiently recognize the patients’ severity.
+  
+Low heart rate variability (HRV) has been demonstrated to be a major risk factor leading to various conditions, particularly cardiovascular disorders\cite{kamath1987heart}.
+  On the other hand, high HRV has been shown to be an indicator of improved executive functions, such as attentional processing or impulse control\cite{appelhans2006heart, thayer2005psychosomatics}.
+  High HRV has also been observed in different psychological conditions associated with symptoms of impaired behavioral and emotional regulation\cite{thayer2009claude, schulz2008negative}.
 
 
-  \section{Features we wished to implement}
-  % TODO Complete sentences
-  Signal acquisition, Pre-processing, extracting features, plotting peaks, HR, Poincare plot
+  \subsection{Features we wish to implement}
+  \begin{itemize}
+  \item ECG Signal acquisition from the subject
+  \item Filtering and Pre-processing of the signal
+  \item Detection of peaks in the signal
+  \item Extracting time domain features from the signal
+  \item Plotting the peaks, heart rate and the Poincare plot
+  \item Displaying the feature values and plots on a monitor
+  \end{itemize}
 
 
   \newpage
-  \section{Our implementation}
+  \section{Implementation}
   % TODO Add images of our implementation
   \underline{Three sensor pads} are placed on specific regions of the body based on the concept of Einthoven’s triangle\cite{abi2019einthoven}, which is an inverted equilateral triangle as shown in figure \ref{fig:eithoven_triangle}. The voltages at these points give a net potential of zero, making the electrode setup electrically equilateral.
 
@@ -145,25 +155,105 @@
   A Peak detection algorithm is applied and then features are extracted from the RR durations in an ECG signal, where RR represents the period between two consecutive R peaks.
   On the Raspberry Pi, a Jupyter Notebook can be used to provide an interactive environment for signal processing and plotting different waveforms and graphs.
   The peak detection algorithm has been tested on the MAHNOB-HCI\cite{lichtenauer2011mahnob} dataset.
+  
+
+
+\begin{figure}[h]
+\caption{Block schematic of the system}
+\centering
+\includegraphics[width=0.5\textwidth]{block_diagram}
+\end{figure}
+
+
 
   Features extracted include:
   % TODO Add pictures for each feature
   \begin{itemize}[topsep=1pt]
     \item[] \textit{Mean RR} gives the average value of the RR duration in an ECG segment.
-    \item[] \textit{SDNN} is the standard deviation of the NN (R-R) intervals
-    \item[] \textit{MSSD} is the root mean square of the successive differences of RR intervals, used for a good snapshot of the Autonomic Nervous System’s Parasympathetic branch and is the basis of the HRV Score.  RMSSD is considered as one of the most relevant and accurate measures of autonomic Nervous system activity over the short-term.
+    \item[] \textit{SDNN} is the standard deviation of the NN (R-R) intervals
+    \item[] \textit{RMSSD} is the root mean square of the successive differences of RR intervals, used for a good snapshot of the Autonomic Nervous System’s Parasympathetic branch and is the basis of the HRV Score.  RMSSD is considered as one of the most relevant and accurate measures of autonomic Nervous system activity over the short-term.
     \item[] \textit{NN50}is the number of pairs of successive NN (R-R) intervals that differ by more than 50 ms
     \item[] \textit{PNN50} is the proportion of NN50 divided by the total number of NN (R-R) intervals
     \item[] \textit{Poincare Plot} is graphed by plotting every R–R interval against the prior interval, creating a scatter plot.
     Poincare plot analysis allows researchers to visually search for patterns buried within a time series.
     The analysis of this plot is a geometrical and nonlinear method to assess the dynamics of HRV.
-    The degree of heart failure can be evaluated quantitatively through the computation of the standard deviation (SD) indexes of the plot\cite{hsu2012poincare}.
+    The degree of heart failure can be evaluated quantitatively through the computation of the standard deviation (SD) indexes of the plot\cite{hsu2012poincare}.
   \end{itemize}
 
+  \section{Results}
+  \begin{figure}[h]
+\centering
+\subfloat[Subfigure 1 list of figures text][Raw Dataset ECG]{
+\includegraphics[width=0.4\textwidth]{ecg_raw}
+\label{fig:subfig1}}
+\qquad
+\subfloat[Subfigure 2 list of figures text][Dataset ECG after preprocessing]{
+\includegraphics[width=0.4\textwidth]{ecg_averaged}
+\label{fig:subfig2}}
+\qquad
+\subfloat[Subfigure 3 list of figures text][Peak detection on Dataset ECG]{
+\includegraphics[width=0.4\textwidth]{ecg_peaks}
+\label{fig:subfig3}}
+\qquad
+\subfloat[Subfigure 4 list of figures text][Peak detection on recorded ECG]{
+\includegraphics[width=0.4\textwidth]{ecglab_peaks}
+\label{fig:subfig4}}
+\caption{The peak detection algorithm works flawlessly on both the dataset ECG and the recorded ECG.}
+\label{fig:globfig}
+\end{figure}
 
-  \section{Conclusions and Future Work}
+ 
+
+\begin{center}
+ \begin{tabular}{||c c ||} 
+ \hline
+ Feature & Value  \\ [0.5ex] 
+ \hline\hline
+ Average HR & 77.4243  \\ 
+ \hline
+ SDNN & 0.0336 \\
+ \hline
+ RMSDD & 0.0259  \\
+ \hline
+ NN50 & 2.0000  \\
+ \hline
+ PNN50 & 0.0541  \\ [1ex] 
+ \hline
+\end{tabular}
+%\caption{Feature values for an ECG sample}
+%\label{table:1}
+\end{center}
+
+
+
+\begin{figure}[h]
+\centering
+\qquad
+\subfloat[Subfigure 5 list of figures text][HR of Dataset ECG ]{
+\includegraphics[width=0.4\textwidth]{ecg_hrv}
+\label{fig:subfig5}}
+\qquad
+\subfloat[Subfigure 6 list of figures text][HR of recorded ECG]{
+\includegraphics[width=0.4\textwidth]{ecglab_hrv}
+\label{fig:subfig6}}
+\qquad
+\subfloat[Subfigure 7 list of figures text][Poincare plot of Dataset ECG]{
+\includegraphics[width=0.4\textwidth]{ecg_poincare}
+\label{fig:subfig7}}
+\qquad
+\subfloat[Subfigure 8 list of figures text][Poincare plot of recorded ECG]{
+\includegraphics[width=0.4\textwidth]{ecglab_poincare}
+\label{fig:subfig8}}
+\caption{Plots obtained}
+\label{fig:globfig}
+\end{figure}
+  
+  
+\newpage
+  \section{Conclusion and Future Work}
 
   % TODO Complete sentences
+  neural network-emotion recognition, cardiac arrhythmia
   Diagnosis of cardiac and neurological disorders.
   Better sensors give better results
   Data can be sent to the cloud, processed there and then to the app
