@@ -59,13 +59,25 @@
   % TODO Change titlepage to add logo
 
   \newpage
+  \begin{center}
+  \begin{large}
+  \textbf{Abstract}
+  \end{large}
+  \end{center}
+
+  A portable, low power and low cost system is proposed to detect the heart rate variability features from a recorded ECG signal. The ECG is recorded with the help of the AD8232 signal condidtioning unit from where it is sent to an Arduino Uno. The signal data is then serially transmitted to a Raspberry Pi which handles the signal processing tasks. After filtering and normalization of the ECG, a peak detection algorithm is used to identify peaks. Based on this, various heart rate variability indices including the mean RR interval duration, standard deviation of RR intervals, RMS value of the successive differences of RR intervals, number of pairs of successive RR intervals that differ by more than 50 ms are extracted from the signal. The plots of the peaks detected, heart rate variation and the Poinare plot are then displayed on a monitor. The heart rate variability features can be used by physicians for during the diagnosis of different heart related disorders. These features can also be used for more complicated tasks like identification of stress level or detection of cardiac arrhythmia. More accurate sensors or  multiple sensors which record different physiological signals can be used together to improve and give a more holistic view during diagnosis of various disorders.
+  
+  \textbf{Keywords:} peak detection, Raspberry Pi, heart rate variablity, Poincare plot, Arduino
+
+  
+  \newpage
   \tableofcontents
   \thispagestyle{empty}
 
   \setcounter{page}{1}
   \newpage
   \section{Introduction}
-  Electrocardiography (ECG or EKG) is a representation of the electrical activity of the heart as it changes with time. It is a plot of voltage, which is usually expressed in millivolts (mV), against time in seconds (s). This measurement is taken by placing electrodes on the skin at different points of the body. The analysis of ECG is done by doctors to assess various abnormalities associated with the heart and other cardiac functions. The heart rate variability (HRV) is a broad term given to the cycle to cycle variation in the ECG.
+  Electrocardiography (ECG or EKG) is a representation of the electrical activity of the heart as it changes with time. It is a plot of voltage, which is usually expressed in millivolts (mV), against time in seconds (s). This measurement is taken by placing electrodes on the skin at different points of the body. The analysis of ECG is done by physicians to assess various abnormalities associated with the heart and other cardiac functions. The heart rate variability (HRV) is a broad term given to the cycle to cycle variation in the ECG.
 
   The study and analysis of short-term and long-term variability in heart rate reflects the functioning of the vagal nerve and the sympathetic function of the autonomic nervous system, respectively.
   Heart rate variability can therefore be not only used as a monitoring tool in the diagnosis of cardiac ailments but also in clinical conditions with altered autonomic nervous system function.
@@ -116,7 +128,7 @@
   High HRV has also been observed in different psychological conditions associated with symptoms of impaired behavioral and emotional regulation\cite{thayer2009claude, schulz2008negative}.
 
 
-  \subsection{Features we wish to implement}
+  \section{Features we wish to implement}
   \begin{itemize}
   \item \textbf{ECG Signal acquisition:} The ECG signal is obtained with the help of the sensor pads and the AD8232 unit.
   \item \textbf{Filtering and Pre-processing:} On the Raspberry Pi, the ECG signal is filtered and smoothened.
@@ -125,8 +137,6 @@
   \item \textbf{Plots:} The ECG peaks, change in heart rate and Poincare plots are displayed on the monitor along with the feature values.
   \end{itemize}
 
-
-  \newpage
   \section{Implementation}
   \underline{Three sensor pads} are placed on specific regions of the body based on the concept of Einthoven’s triangle\cite{abi2019einthoven}, which is an inverted equilateral triangle as shown in figure \ref{fig:eithoven_triangle}. The voltages at these points give a net potential of zero, making the electrode setup electrically equilateral.
 
@@ -144,8 +154,8 @@
   After an abrupt signal change that rails the amplifier (such as a leads off condition), the AD8232 automatically adjusts to a higher filter cutoff.
   This feature allows the AD8232 to recover quickly, and therefore, to take valid measurements soon after connecting the electrodes to the subject.
 
-  \underline{Arduino Uno} used to record the data from the AD8232 at a fixed sampling rate, say 100 Hz.
-  The data is then serially transmitted to the Raspberry Pi which can handle more complex processes using more computing power.
+  \underline{Arduino Uno} used to record the data from the AD8232 at a fixed sampling rate, say 100 Hz. 
+ The data is then serially transmitted to the Raspberry Pi which can handle more complex processes using more computing power.   The Arduino handles the interfacing and collection of signal data and the Raspberry Pi focuses on the more power intensive tasks like signal processing and machine learning, if any.
 
   A \underline{Raspberry Pi 3B+} is used to process and analyse the signals.
   Short segments of ECG signals are taken and filtered, smoothened and normalized.
@@ -162,7 +172,7 @@
 
   Features extracted include:
   \begin{itemize}[topsep=1pt]
-    \item[] \textit{Mean RR} gives the average value of the RR duration in an ECG segment.
+    \item[] \textit{Mean RR} gives the average value of the RR duration in an ECG segment. This can be used to calculate the average heart rate (HR).
     \item[] \textit{SDNN} is the standard deviation of the NN (R-R) intervals
     \item[] \textit{RMSSD} is the root mean square of the successive differences of RR intervals, used for a good snapshot of the Autonomic Nervous System’s Parasympathetic branch and is the basis of the HRV Score.  RMSSD is considered as one of the most relevant and accurate measures of autonomic Nervous system activity over the short-term.
     \item[] \textit{NN50} is the number of pairs of successive NN (R-R) intervals that differ by more than 50 ms
@@ -172,16 +182,20 @@
     The analysis of this plot is a geometrical and nonlinear method to assess the dynamics of HRV.
     The degree of heart failure can be evaluated quantitatively through the computation of the standard deviation (SD) indexes of the plot\cite{hsu2012poincare}.
   \end{itemize}
-
-
+  
   \section{Results}
+  The values of the various features obtained from a sample of the recorded ECG signal are tabulated.
+  
   \begin{figure}
     \centering
-    \subfloat[Subfigure 1 list of figures text][Raw Dataset ECG]{
+    \subfloat[Subfigure 1 list of figures text][Raw Dataset ECG]
+    {
     \includegraphics[width=0.4\textwidth]{ecg_raw}
-    \label{fig:subfig1}}
+    \label{fig:subfig1}
+    }
     \qquad
-    \subfloat[Subfigure 2 list of figures text][Dataset ECG after preprocessing]{
+    \subfloat[Subfigure 2 list of figures text][Dataset ECG after preprocessing]
+    {
       \includegraphics[width=0.4\textwidth]{ecg_averaged}
       \label{fig:subfig2}
     }
@@ -197,14 +211,14 @@
       \includegraphics[width=0.4\textwidth]{ecglab_peaks}
       \label{fig:subfig4}
     }
-    \caption{The peak detection algorithm works flawlessly on both the dataset ECG and the recorded ECG.}
+    \caption{Processing of the ECG signal}
     \label{fig:globfig}
   \end{figure}
 
   \begin{center}
-    \begin{tabular}{||c c ||}
+    \begin{tabular}{|c | c |}
       \hline
-      Feature & Value  \\ [0.5ex]
+      \textbf{Feature} & \textbf{Value}  \\ 
       \hline\hline
       Average HR & 77.4243  \\
       \hline
@@ -253,14 +267,15 @@
 
 
   \newpage
-  \section{Conclusion and Future Work}
-  % TODO Complete sentences
-  neural network-emotion recognition, cardiac arrhythmia
-  Diagnosis of cardiac and neurological disorders.
-  Better sensors give better results
-  Data can be sent to the cloud, processed there and then to the app
-
-
+  \section{Conclusion}
+  A portable, low power and low cost system is implemented to record ECG signals from the subject and display the heart rate variability features. These features can be used by physicians during the diagnosis of heart related ailments or even a few neuro-physiological disorders. The accuracy of the features can be improved by using sensors which give better accuracy using which the more intricate features of the signal can be extracted.
+  
+  These features can also be used for other tasks like emotion recognition or detection of cardiac arrhythmia. One can use multiple sensors which record various signals from the body and extract features from different signals. These features can be then processed, maybe using an artificial neural network, for more complex tasks which require a more holistic view of things.
+  
+  In this era of IoT (Internet of Things), a bigger ecosystem can be built where the signal data collected can be sent to a remote server, processed there and and then the results can be accessed by the end user through a mobile app. 
+  
+  
+  
   \newpage
   \bibliography{bibliography}
   \bibliographystyle{ieeetr}
