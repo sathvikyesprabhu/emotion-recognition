@@ -66,7 +66,7 @@
   \setcounter{page}{1}
   \newpage
   \section{Introduction}
-
+ Electrocardiography (ECG or EKG) is a representation of the electrical activity of the heart as it changes with time. It is a plot of voltage, which is usually expressed in millivolts (mV), against time in seconds (s). This measurement is taken by placing electrodes on the skin at different points of the body. The analysis of ECG is done by doctors to assess various abnormalities associated with the heart and other cardiac functions. The heart rate variability (HRV) is a broad term given to the cycle to cycle variation in the ECG. 
   
   The study and analysis of short-term and long-term variability in heart rate reflects the functioning of the vagal nerve and the sympathetic function of the autonomic nervous system, respectively.
   Heart rate variability can therefore be not only used as a monitoring tool in the diagnosis of cardiac ailments but also in clinical conditions with altered autonomic nervous system function.
@@ -119,12 +119,11 @@ Low heart rate variability (HRV) has been demonstrated to be a major risk factor
 
   \subsection{Features we wish to implement}
   \begin{itemize}
-  \item ECG Signal acquisition from the subject
-  \item Filtering and Pre-processing of the signal
-  \item Detection of peaks in the signal
-  \item Extracting time domain features from the signal
-  \item Plotting the peaks, heart rate and the Poincare plot
-  \item Displaying the feature values and plots on a monitor
+  \item \textbf{ECG Signal acquisition:} The ECG signal is obtained with the help of the sensor pads and the AD8232 unit.
+  \item \textbf{Filtering and Pre-processing:} On the Raspberry Pi, the ECG signal is filtered and smoothened. 
+  \item \textbf{Detection of peaks:} A threshold based peak detection algorithm is applied to detect peaks.
+  \item \textbf{Extracting features:} Time domain features are extracted after peak detection.
+  \item \textbf{Plots:} The ECG peaks, change in heart rate and Poincare plots are displayed on the monitor along with the feature values.
   \end{itemize}
 
 
@@ -148,13 +147,15 @@ Low heart rate variability (HRV) has been demonstrated to be a major risk factor
   This feature allows the AD8232 to recover quickly, and therefore, to take valid measurements soon after connecting the electrodes to the subject.
 
 
-  \underline{Arduino Uno} used to record the data from the AD8232 at a fixed sampling rate.
+  \underline{Arduino Uno} used to record the data from the AD8232 at a fixed sampling rate, say 100 Hz.
   The data is then serially transmitted to the Raspberry Pi which can handle more complex processes using more computing power.
-  Raspberry Pi 3B+ used to process and analyse the signals.
+  
+  \underline{Raspberry Pi 3B+} is used to process and analyse the signals.
   Short segments of ECG signals are taken and filtered, smoothened and normalized.
   A Peak detection algorithm is applied and then features are extracted from the RR durations in an ECG signal, where RR represents the period between two consecutive R peaks.
-  On the Raspberry Pi, a Jupyter Notebook can be used to provide an interactive environment for signal processing and plotting different waveforms and graphs.
-  The peak detection algorithm has been tested on the MAHNOB-HCI\cite{lichtenauer2011mahnob} dataset.
+  On the Raspberry Pi, a Jupyter Notebook can be used to provide an interactive environment for signal processing and plotting different waveforms and graphs.\\ 
+  
+  The peak detection algorithm has been tested on the MAHNOB-HCI\cite{lichtenauer2011mahnob} dataset. Here, small ECG segments of length 10-20 seconds are first preprocessed and normalized. Then a threshold is determined in such a way that all peaks occur above this threshold. Finally the maximum point in each of these local segments are determined to find the peaks.
   
 
 
@@ -172,7 +173,7 @@ Low heart rate variability (HRV) has been demonstrated to be a major risk factor
     \item[] \textit{Mean RR} gives the average value of the RR duration in an ECG segment.
     \item[] \textit{SDNN} is the standard deviation of the NN (R-R) intervals
     \item[] \textit{RMSSD} is the root mean square of the successive differences of RR intervals, used for a good snapshot of the Autonomic Nervous System’s Parasympathetic branch and is the basis of the HRV Score.  RMSSD is considered as one of the most relevant and accurate measures of autonomic Nervous system activity over the short-term.
-    \item[] \textit{NN50}is the number of pairs of successive NN (R-R) intervals that differ by more than 50 ms
+    \item[] \textit{NN50} is the number of pairs of successive NN (R-R) intervals that differ by more than 50 ms
     \item[] \textit{PNN50} is the proportion of NN50 divided by the total number of NN (R-R) intervals
     \item[] \textit{Poincare Plot} is graphed by plotting every R–R interval against the prior interval, creating a scatter plot.
     Poincare plot analysis allows researchers to visually search for patterns buried within a time series.
