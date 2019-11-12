@@ -1,4 +1,3 @@
-
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
@@ -66,8 +65,8 @@
   \setcounter{page}{1}
   \newpage
   \section{Introduction}
- Electrocardiography (ECG or EKG) is a representation of the electrical activity of the heart as it changes with time. It is a plot of voltage, which is usually expressed in millivolts (mV), against time in seconds (s). This measurement is taken by placing electrodes on the skin at different points of the body. The analysis of ECG is done by doctors to assess various abnormalities associated with the heart and other cardiac functions. The heart rate variability (HRV) is a broad term given to the cycle to cycle variation in the ECG. 
-  
+  Electrocardiography (ECG or EKG) is a representation of the electrical activity of the heart as it changes with time. It is a plot of voltage, which is usually expressed in millivolts (mV), against time in seconds (s). This measurement is taken by placing electrodes on the skin at different points of the body. The analysis of ECG is done by doctors to assess various abnormalities associated with the heart and other cardiac functions. The heart rate variability (HRV) is a broad term given to the cycle to cycle variation in the ECG.
+
   The study and analysis of short-term and long-term variability in heart rate reflects the functioning of the vagal nerve and the sympathetic function of the autonomic nervous system, respectively.
   Heart rate variability can therefore be not only used as a monitoring tool in the diagnosis of cardiac ailments but also in clinical conditions with altered autonomic nervous system function.
   n diabetic patients, low heart rate variability is associated with an increased risk for sudden cardiac death.
@@ -77,7 +76,7 @@
   A typical ECG signal is characterized by a P wave, a QRS complex consisting of Q,R and S waves and a T wave as shown in figure \ref{fig:pqrst}.
   The automatic detection of the QRS complex or the R peaks in a long term electrocardiogram (ECG) signal is one of the most important steps in the diagnosis of cardiac disorders, biometric and ECG coding systems.
 
-  \begin{figure}
+  \begin{figure}[h]
     \centering
     \includegraphics[scale=0.2]{images/SinusRhythmLabels.jpg}
     \caption{A typical ECG wave showing the P wave, QRS complex and S, T waves\cite{wiki:SinusRythmLabels}}
@@ -106,13 +105,13 @@
 
   \section{Literature Review}
   \subsection{Survey of the state of the art}
-  Paulo et. al.\cite{melillo_nonlinear_2011} have used nonlinear features of HRV for automatically detecting real-life stress conditions. Features such as the approximate entropy, correlation dimesnion, fluctuation Analysis, recurrence Plot and the poincare plot were used along with the linear discriminant analysis (LDA) classifier to detect the stress level.
-  
-  Christov et. al. \cite{christov_ranking_2018} studied and ranked the most reliable heart rate variability features for the detection of atrial fibrillation in single-lead ECG. The identified features were the proportion of RR intervals differing by more than 50 ms from the preceding RR interval, Poincare plot geometry estimated by the ratio of the minor-to-major semi-axes of the fitted ellipse, P-wave presence in the average beat, the mean percentage of the RR interval first differences and the mean correlation of all beats against the average beat. 
-  
-  Ni et. al.\cite{ni_multiscale_2019} have proposed a method to recognize the severity of hypertension using HRV features. They extracted 18 HRV multidimensional features in the time, frequency, and nonlinear domain. Then the temporal pyramid pooling method was designed to reduce feature dimensions. Multifactor analysis of variance (MANOVA) was later applied to filter the related features and establish the hypertension recognizing model with relevant features to efficiently recognize the patients’ severity.
-  
-Low heart rate variability (HRV) has been demonstrated to be a major risk factor leading to various conditions, particularly cardiovascular disorders\cite{kamath1987heart}.
+  Paulo et. al.\cite{melillo2011nonlinear} have used nonlinear features of HRV for automatically detecting real-life stress conditions. Features such as the approximate entropy, correlation dimesnion, fluctuation Analysis, recurrence Plot and the poincare plot were used along with the linear discriminant analysis (LDA) classifier to detect the stress level.
+
+  Christov et. al. \cite{christov2018ranking} studied and ranked the most reliable heart rate variability features for the detection of atrial fibrillation in single-lead ECG. The identified features were the proportion of RR intervals differing by more than 50 ms from the preceding RR interval, Poincare plot geometry estimated by the ratio of the minor-to-major semi-axes of the fitted ellipse, P-wave presence in the average beat, the mean percentage of the RR interval first differences and the mean correlation of all beats against the average beat.
+
+  Ni et. al.\cite{ni2019multiscale} have proposed a method to recognize the severity of hypertension using HRV features. They extracted 18 HRV multidimensional features in the time, frequency, and nonlinear domain. Then the temporal pyramid pooling method was designed to reduce feature dimensions. Multifactor analysis of variance (MANOVA) was later applied to filter the related features and establish the hypertension recognizing model with relevant features to efficiently recognize the patients’ severity.
+
+  Low heart rate variability (HRV) has been demonstrated to be a major risk factor leading to various conditions, particularly cardiovascular disorders\cite{kamath1987heart}.
   On the other hand, high HRV has been shown to be an indicator of improved executive functions, such as attentional processing or impulse control\cite{appelhans2006heart, thayer2005psychosomatics}.
   High HRV has also been observed in different psychological conditions associated with symptoms of impaired behavioral and emotional regulation\cite{thayer2009claude, schulz2008negative}.
 
@@ -120,7 +119,7 @@ Low heart rate variability (HRV) has been demonstrated to be a major risk factor
   \subsection{Features we wish to implement}
   \begin{itemize}
   \item \textbf{ECG Signal acquisition:} The ECG signal is obtained with the help of the sensor pads and the AD8232 unit.
-  \item \textbf{Filtering and Pre-processing:} On the Raspberry Pi, the ECG signal is filtered and smoothened. 
+  \item \textbf{Filtering and Pre-processing:} On the Raspberry Pi, the ECG signal is filtered and smoothened.
   \item \textbf{Detection of peaks:} A threshold based peak detection algorithm is applied to detect peaks.
   \item \textbf{Extracting features:} Time domain features are extracted after peak detection.
   \item \textbf{Plots:} The ECG peaks, change in heart rate and Poincare plots are displayed on the monitor along with the feature values.
@@ -129,10 +128,9 @@ Low heart rate variability (HRV) has been demonstrated to be a major risk factor
 
   \newpage
   \section{Implementation}
-  % TODO Add images of our implementation
   \underline{Three sensor pads} are placed on specific regions of the body based on the concept of Einthoven’s triangle\cite{abi2019einthoven}, which is an inverted equilateral triangle as shown in figure \ref{fig:eithoven_triangle}. The voltages at these points give a net potential of zero, making the electrode setup electrically equilateral.
 
-  \begin{figure}
+  \begin{figure}[h]
     \centering
     \includegraphics[scale=0.1]{images/eithoven_triangle.png}
     \caption{Eithoven's triangle\cite{cvp:ECG_eithoven}}
@@ -146,29 +144,23 @@ Low heart rate variability (HRV) has been demonstrated to be a major risk factor
   After an abrupt signal change that rails the amplifier (such as a leads off condition), the AD8232 automatically adjusts to a higher filter cutoff.
   This feature allows the AD8232 to recover quickly, and therefore, to take valid measurements soon after connecting the electrodes to the subject.
 
-
   \underline{Arduino Uno} used to record the data from the AD8232 at a fixed sampling rate, say 100 Hz.
   The data is then serially transmitted to the Raspberry Pi which can handle more complex processes using more computing power.
-  
-  \underline{Raspberry Pi 3B+} is used to process and analyse the signals.
+
+  A \underline{Raspberry Pi 3B+} is used to process and analyse the signals.
   Short segments of ECG signals are taken and filtered, smoothened and normalized.
   A Peak detection algorithm is applied and then features are extracted from the RR durations in an ECG signal, where RR represents the period between two consecutive R peaks.
-  On the Raspberry Pi, a Jupyter Notebook can be used to provide an interactive environment for signal processing and plotting different waveforms and graphs.\\ 
-  
+  On the Raspberry Pi, a Jupyter Notebook can be used to provide an interactive environment for signal processing and plotting different waveforms and graphs.
+
   The peak detection algorithm has been tested on the MAHNOB-HCI\cite{lichtenauer2011mahnob} dataset. Here, small ECG segments of length 10-20 seconds are first preprocessed and normalized. Then a threshold is determined in such a way that all peaks occur above this threshold. Finally the maximum point in each of these local segments are determined to find the peaks.
-  
 
-
-\begin{figure}[h]
-\caption{Block schematic of the system}
-\centering
-\includegraphics[width=0.5\textwidth]{block_diagram}
-\end{figure}
-
-
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/block_diagram}
+    \caption{Block schematic of the system}
+  \end{figure}
 
   Features extracted include:
-  % TODO Add pictures for each feature
   \begin{itemize}[topsep=1pt]
     \item[] \textit{Mean RR} gives the average value of the RR duration in an ECG segment.
     \item[] \textit{SDNN} is the standard deviation of the NN (R-R) intervals
@@ -181,78 +173,87 @@ Low heart rate variability (HRV) has been demonstrated to be a major risk factor
     The degree of heart failure can be evaluated quantitatively through the computation of the standard deviation (SD) indexes of the plot\cite{hsu2012poincare}.
   \end{itemize}
 
+
   \section{Results}
-  \begin{figure}[h]
-\centering
-\subfloat[Subfigure 1 list of figures text][Raw Dataset ECG]{
-\includegraphics[width=0.4\textwidth]{ecg_raw}
-\label{fig:subfig1}}
-\qquad
-\subfloat[Subfigure 2 list of figures text][Dataset ECG after preprocessing]{
-\includegraphics[width=0.4\textwidth]{ecg_averaged}
-\label{fig:subfig2}}
-\qquad
-\subfloat[Subfigure 3 list of figures text][Peak detection on Dataset ECG]{
-\includegraphics[width=0.4\textwidth]{ecg_peaks}
-\label{fig:subfig3}}
-\qquad
-\subfloat[Subfigure 4 list of figures text][Peak detection on recorded ECG]{
-\includegraphics[width=0.4\textwidth]{ecglab_peaks}
-\label{fig:subfig4}}
-\caption{The peak detection algorithm works flawlessly on both the dataset ECG and the recorded ECG.}
-\label{fig:globfig}
-\end{figure}
+  \begin{figure}
+    \centering
+    \subfloat[Subfigure 1 list of figures text][Raw Dataset ECG]{
+    \includegraphics[width=0.4\textwidth]{ecg_raw}
+    \label{fig:subfig1}}
+    \qquad
+    \subfloat[Subfigure 2 list of figures text][Dataset ECG after preprocessing]{
+      \includegraphics[width=0.4\textwidth]{ecg_averaged}
+      \label{fig:subfig2}
+    }
+    \qquad
+    \subfloat[Subfigure 3 list of figures text][Peak detection on Dataset ECG]
+    {
+      \includegraphics[width=0.4\textwidth]{ecg_peaks}
+      \label{fig:subfig3}
+    }
+    \qquad
+    \subfloat[Subfigure 4 list of figures text][Peak detection on recorded ECG]
+    {
+      \includegraphics[width=0.4\textwidth]{ecglab_peaks}
+      \label{fig:subfig4}
+    }
+    \caption{The peak detection algorithm works flawlessly on both the dataset ECG and the recorded ECG.}
+    \label{fig:globfig}
+  \end{figure}
 
- 
+  \begin{center}
+    \begin{tabular}{||c c ||}
+      \hline
+      Feature & Value  \\ [0.5ex]
+      \hline\hline
+      Average HR & 77.4243  \\
+      \hline
+      SDNN & 0.0336 \\
+      \hline
+      RMSDD & 0.0259  \\
+      \hline
+      NN50 & 2.0000  \\
+      \hline
+      PNN50 & 0.0541  \\ [1ex]
+      \hline
+    \end{tabular}
+    %\caption{Feature values for an ECG sample}
+    %\label{table:1}
+  \end{center}
 
-\begin{center}
- \begin{tabular}{||c c ||} 
- \hline
- Feature & Value  \\ [0.5ex] 
- \hline\hline
- Average HR & 77.4243  \\ 
- \hline
- SDNN & 0.0336 \\
- \hline
- RMSDD & 0.0259  \\
- \hline
- NN50 & 2.0000  \\
- \hline
- PNN50 & 0.0541  \\ [1ex] 
- \hline
-\end{tabular}
-%\caption{Feature values for an ECG sample}
-%\label{table:1}
-\end{center}
+  \begin{figure}
+    \centering
+    \qquad
+    \subfloat[Subfigure 5 list of figures text][HR of Dataset ECG ]
+    {
+      \includegraphics[width=0.4\textwidth]{ecg_hrv}
+      \label{fig:subfig5}
+    }
+    \qquad
+    \subfloat[Subfigure 6 list of figures text][HR of recorded ECG]
+    {
+      \includegraphics[width=0.4\textwidth]{ecglab_hrv}
+      \label{fig:subfig6}
+    }
+    \qquad
+    \subfloat[Subfigure 7 list of figures text][Poincare plot of Dataset ECG]
+    {
+      \includegraphics[width=0.4\textwidth]{ecg_poincare}
+      \label{fig:subfig7}
+    }
+    \qquad
+    \subfloat[Subfigure 8 list of figures text][Poincare plot of recorded ECG]
+    {
+      \includegraphics[width=0.4\textwidth]{ecglab_poincare}
+      \label{fig:subfig8}
+    }
+    \caption{Plots obtained}
+    \label{fig:globfig}
+  \end{figure}
 
 
-
-\begin{figure}[h]
-\centering
-\qquad
-\subfloat[Subfigure 5 list of figures text][HR of Dataset ECG ]{
-\includegraphics[width=0.4\textwidth]{ecg_hrv}
-\label{fig:subfig5}}
-\qquad
-\subfloat[Subfigure 6 list of figures text][HR of recorded ECG]{
-\includegraphics[width=0.4\textwidth]{ecglab_hrv}
-\label{fig:subfig6}}
-\qquad
-\subfloat[Subfigure 7 list of figures text][Poincare plot of Dataset ECG]{
-\includegraphics[width=0.4\textwidth]{ecg_poincare}
-\label{fig:subfig7}}
-\qquad
-\subfloat[Subfigure 8 list of figures text][Poincare plot of recorded ECG]{
-\includegraphics[width=0.4\textwidth]{ecglab_poincare}
-\label{fig:subfig8}}
-\caption{Plots obtained}
-\label{fig:globfig}
-\end{figure}
-  
-  
-\newpage
+  \newpage
   \section{Conclusion and Future Work}
-
   % TODO Complete sentences
   neural network-emotion recognition, cardiac arrhythmia
   Diagnosis of cardiac and neurological disorders.
